@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Absam Clothing</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #080808;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+header {
+  padding: 30px 15px;
+  background: #111;
+  border-bottom: 2px solid #d4af37;
+}
+
+.logo {
+  color: #d4af37;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.tagline {
+  color: white;
+  letter-spacing: 3px;
+}
+
+h2 {
+  color: #d4af37;
+}
+
+section {
+  padding: 25px 15px;
+}
+
+.card {
+  background: #191919;
+  border: 1px solid #8b7024;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+}
+
+.price {
+  color: #ffd700;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+button {
+  background: #ffd700;
+  color: black;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 7px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+footer {
+  padding: 25px;
+  background: #151515;
+  color: #ccc;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">ABSAM CLOTHING</div>
+  <p class="tagline">PREMIUM TAILORING</p>
+  <p>Kano, Nigeria</p>
+</header>
+
+<section>
+  <h2>Welcome to Absam Clothing</h2>
+  <p>Quality Traditional Clothing, Made to Fit You.</p>
+</section>
+
+<section>
+  <h2>Our Services</h2>
+
+  <div class="card">
+    <h3>Babban Riga</h3>
+    <p>Elegant traditional designs, sewn to your measurements.</p>
+    <p class="price">From ₦18,000</p>
+    <button onclick="order('Babban Riga')">Order Now</button>
+  </div>
+
+  <div class="card">
+    <h3>Kaftan</h3>
+    <p>Modern and classic styles with quality finishing.</p>
+    <p class="price">Contact for Price</p>
+    <button onclick="order('Kaftan')">Order Now</button>
+  </div>
+</section>
+
+<section>
+  <h2>Contact Us</h2>
+  <p>📍 Tukuntawa, Gidan Rediyo, Kano, Nigeria</p>
+  <button onclick="contactUs()">WhatsApp Us</button>
+</section>
+
+<footer>
+  <p>© 2026 Absam Clothing</p>
+  <p>Quality • Style • Excellence</p>
+</footer>
+
+<script>
+function order(item) {
+  let message = "Assalamu Alaikum, I want to order " + item +
+    " from Absam Clothing.";
+  window.open(
+    "https://wa.me/2349068560650?text=" +
+    encodeURIComponent(message),
+    "_blank"
+  );
+}
+
+function contactUs() {
+  window.open("https://wa.me/2349068560650", "_blank");
+}
+</script>
+
+</body>
+</html>
