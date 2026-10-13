@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Absam Clothing</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #080808;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding-bottom: 85px;
+}
+
+header {
+  text-align: center;
+  padding: 25px 10px;
+  background: #111;
+  border-bottom: 1px solid #b89b48;
+}
+
+.logo {
+  color: #e5c568;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+header p {
+  color: #bbb;
+  margin-top: 8px;
+}
+
+.hero {
+  padding: 40px 20px;
+  text-align: center;
+  background: linear-gradient(#171717, #080808);
+}
+
+.hero h1 {
+  color: #e5c568;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  color: #ddd;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.button {
+  display: inline-block;
+  background: #e5c568;
+  color: #080808;
+  padding: 14px 22px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+section {
+  padding: 25px 16px;
+  scroll-margin-top: 15px;
+}
+
+.section-title {
+  color: #e5c568;
+  font-size: 25px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.product {
+  background: #191919;
+  border: 1px solid #66552c;
+  border-radius: 10px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.product img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.product h3 {
+  color: #e5c568;
+  font-size: 16px;
+  margin: 12px 0 8px;
+}
+
+.product p {
+  color: #ccc;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.price {
+  color: #ffd700;
+  font-weight: bold;
+  margin: 12px 0;
+}
+
+.order-button {
+  display: block;
+  width: 100%;
+  padding: 11px 5px;
+  background: #e5c568;
+  color: #080808;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.info-box {
+  background: #191919;
+  border: 1px solid #66552c;
+  padding: 20px;
+  border-radius: 10px;
+  line-height: 1.9;
+}
+
+.info-box a {
+  color: #e5c568;
+}
+
+footer {
+  text-align: center;
+  padding: 25px 10px;
+  color: #aaa;
+  font-size: 13px;
+}
+
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background: #171717;
+  border-top: 1px solid #66552c;
+  padding: 12px 2px;
+  z-index: 100;
+}
+
+nav a {
+  color: #ddd;
+  text-decoration: none;
+  text-align: center;
+  font-size: 11px;
+  flex: 1;
+}
+
+nav a span {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 360px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
+
+  .product img {
+    height: 230px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">ABSAM CLOTHING</div>
+  <p>Premium Traditional Men's Clothing</p>
+  <p>Kano, Nigeria</p>
+</header>
+
+<div class="hero" id="home">
+  <h1>Dress Like Royalty</h1>
+
+  <p>
+    Discover premium Babban Riga, Kaftan,
+    Senator and traditional men's fashion.
+    Tailored with care to your measurements.
+  </p>
+
+  <a href="#designs" class="button">
+    EXPLORE OUR DESIGNS
+  </a>
+</div>
+
+<section id="designs">
+  <h2 class="section-title">Our Collections</h2>
+
+  <div class="products">
+
+    <div class="product">
+      <img
+      src="https://i.postimg.cc/QdknzRrg/file-00000000c0c48206b71aa5f4dae3a2c9.png"
+      alt="Premium Babban Riga">
+
+      <h3>Premium Babban Riga</h3>
+
+      <p>
+        Elegant traditional wear tailored
+        to your measurements.
+      </p>
+
+      <div class="price">₦18,000</div>
+
+      <a class="order-button"
+      href="https://wa.me/2349068560650?text=Hello%20Absam%20Clothing%2C%20I%20want%20to%20order%20Premium%20Babban%20Riga.">
+      ORDER NOW
+      </a>
+    </div>
+
+    <div class="product">
+      <img
+      src="https://i.postimg.cc/QdknzRrg/file-00000000c0c48206b71aa5f4dae3a2c9.png"
+      alt="Premium Kaftan">
+
+      <h3>Premium Kaftan</h3>
+
+      <p>
+        A stylish outfit for occasions
+        and everyday elegance.
+      </p>
+
+      <div class="price">Ask for Price</div>
+
+      <a class="order-button"
+      href="https://wa.me/2349068560650?text=Hello%20Absam%20Clothing%2C%20I%20want%20to%20ask%20about%20Kaftan.">
+      INQUIRE NOW
+      </a>
+    </div>
+
+    <div class="product">
+      <img
+      src="https://i.postimg.cc/QdknzRrg/file-00000000c0c48206b71aa5f4dae3a2c9.png"
+      alt="Senator Outfit">
+
+      <h3>Senator Outfit</h3>
+
+      <p>
+        Smart traditional fashion with
+        professional tailoring.
+      </p>
+
+      <div class="price">Ask for Price</div>
+
+      <a class="order-button"
+      href="https://wa.me/2349068560650?text=Hello%20Absam%20Clothing%2C%20I%20want%20to%20ask%20about%20Senator%20outfit.">
+      INQUIRE NOW
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section id="profile">
+  <h2 class="section-title">About Absam Clothing</h2>
+
+  <div class="info-box">
+    Welcome to Absam Clothing.
+
+    We specialise in premium traditional
+    men's clothing, including Babban Riga,
+    Kaftan and Senator outfits.
+
+    Our goal is to deliver beautiful designs,
+    quality stitching and a great fit.
+
+    <br><br>
+
+    <strong>Location:</strong>
+    Tukuntawa, Gidan Rediyo, Kano, Nigeria.
+  </div>
+</section>
+
+<section id="orders">
+  <h2 class="section-title">How to Order</h2>
+
+  <div class="info-box">
+    <p>1. Browse our clothing collections.</p>
+
+    <p>2. Choose your preferred design.</p>
+
+    <p>3. Click the Order Now button.</p>
+
+    <p>4. Send us your measurements and
+    discuss the price through WhatsApp.</p>
+
+    <br>
+
+    <a class="button"
+    href="https://wa.me/2349068560650?text=Hello%20Absam%20Clothing%2C%20I%20want%20to%20place%20an%20order.">
+    PLACE AN ORDER
+    </a>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Contact Us</h2>
+
+  <div class="info-box">
+
+    <p><strong>Business:</strong>
+    Absam Clothing</p>
+
+    <p><strong>Phone:</strong>
+    +234 906 856 0650</p>
+
+    <p><strong>Email:</strong>
+    <a href="mailto:absamclothing@gmail.com">
+    absamclothing@gmail.com
+    </a></p>
+
+    <p><strong>Address:</strong>
+    Tukuntawa, Gidan Rediyo, Kano, Nigeria.</p>
+
+    <br>
+
+    <a class="button"
+    href="https://wa.me/2349068560650">
+    CHAT ON WHATSAPP
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <p>ABSAM CLOTHING</p>
+  <p>Quality • Elegance • Tradition</p>
+  <p>© 2026 Absam Clothing</p>
+</footer>
+
+<nav>
+  <a href="#home">
+    <span>⌂</span>Home
+  </a>
+
+  <a href="#designs">
+    <span>✧</span>Designs
+  </a>
+
+  <a href="#profile">
+    <span>♙</span>Profile
+  </a>
+
+  <a href="#orders">
+    <span>▣</span>Orders
+  </a>
+
+  <a href="#contact">
+    <span>☏</span>Contact
+  </a>
+</nav>
+
+</body>
+</html>
