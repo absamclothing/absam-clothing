@@ -1,582 +1,1006 @@
 <!DOCTYPE html>
-<html lang="ha">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Absam Clothing & Textile</title>
+  <title>Absam Clothing | Premium Tailoring</title>
 
-<style>
-:root {
-  --black: #0b0b0b;
-  --gold: #d4af37;
-  --white: #ffffff;
-  --panel: #181818;
-}
+  <meta name="description"
+        content="Discover premium men's and children's clothing from Absam Clothing in Kano, Nigeria. Order through WhatsApp.">
 
-* {
-  box-sizing: border-box;
-}
+  <meta name="theme-color" content="#080808">
 
-body {
-  margin: 0;
-  background: var(--black);
-  color: var(--white);
-  font-family: Arial, sans-serif;
-}
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JHFM4J7S8C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-JHFM4J7S8C');
+  </script>
 
-header {
-  background: #111;
-  padding: 20px 12px;
-  text-align: center;
-  border-bottom: 2px solid var(--gold);
-}
+  <style>
+    :root {
+      --black: #080808;
+      --panel: #121212;
+      --gold: #d4af37;
+      --gold-light: #f4df94;
+      --white: #ffffff;
+      --muted: #b7b7b7;
+      --border: #303030;
+    }
 
-header h1 {
-  color: var(--gold);
-  margin: 0;
-  font-size: 27px;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-header p {
-  margin: 5px 0 0;
-  letter-spacing: 3px;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-nav {
-  background: #181818;
-  padding: 13px 5px;
-  text-align: center;
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
 
-nav a {
-  color: var(--gold);
-  text-decoration: none;
-  margin: 0 8px;
-  font-size: 14px;
-}
+    button, input, select, textarea {
+      font: inherit;
+    }
 
-.hero {
-  padding: 45px 18px;
-  text-align: center;
-  background: linear-gradient(135deg, #17130a, #080808);
-}
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
 
-.hero h2 {
-  color: var(--gold);
-  font-size: 32px;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.hero p {
-  color: #ddd;
-}
+    button {
+      cursor: pointer;
+    }
 
-button, .button {
-  background: var(--gold);
-  color: #111;
-  border: none;
-  padding: 12px 16px;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-}
+    .container {
+      width: min(1150px, 92%);
+      margin: auto;
+    }
 
-section {
-  padding: 30px 15px;
-  max-width: 1100px;
-  margin: auto;
-}
+    .gold {
+      color: var(--gold);
+    }
 
-h2.section-title {
-  color: var(--gold);
-  text-align: center;
-}
+    /* ANNOUNCEMENT */
 
-.filters {
-  text-align: center;
-  margin: 20px 0;
-}
+    .announcement {
+      background: var(--gold);
+      color: #080808;
+      text-align: center;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-.filters button {
-  margin: 4px;
-}
+    /* HEADER */
 
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 18px;
-}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 8, 8, .97);
+      border-bottom: 1px solid var(--border);
+    }
 
-.product {
-  background: var(--panel);
-  border: 1px solid #55451e;
-  border-radius: 10px;
-  padding: 15px;
-}
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
 
-.product img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 7px;
-  background: #292929;
-}
+    .brand {
+      font-family: Georgia, serif;
+      font-size: 23px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: var(--gold);
+      line-height: 1.2;
+    }
 
-.product h3 {
-  color: var(--gold);
-}
+    .brand small {
+      display: block;
+      font-family: Arial, sans-serif;
+      color: #ddd;
+      font-size: 9px;
+      letter-spacing: 4px;
+      margin-top: 5px;
+    }
 
-.price {
-  color: var(--gold);
-  font-size: 21px;
-  font-weight: bold;
-}
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      font-size: 13px;
+    }
 
-label {
-  display: block;
-  margin-top: 12px;
-  font-size: 14px;
-}
+    .nav-links a:hover {
+      color: var(--gold);
+    }
 
-select, input, textarea {
-  width: 100%;
-  padding: 11px;
-  margin-top: 5px;
-  background: #101010;
-  color: white;
-  border: 1px solid #555;
-  border-radius: 5px;
-}
+    .cart-button {
+      background: var(--gold);
+      color: #080808;
+      border: 0;
+      padding: 11px 15px;
+      font-weight: bold;
+      border-radius: 3px;
+    }
 
-.product button {
-  width: 100%;
-  margin-top: 15px;
-}
+    /* HERO */
 
-.panel {
-  background: var(--panel);
-  border: 1px solid #55451e;
-  border-radius: 10px;
-  padding: 18px;
-  margin-bottom: 20px;
-}
+    .hero {
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at 85% 45%, #3b3018 0%, transparent 38%),
+        linear-gradient(110deg, #080808 25%, #17130a 100%);
+      border-bottom: 1px solid #292319;
+    }
 
-.panel h3 {
-  color: var(--gold);
-}
+    .hero-content {
+      max-width: 700px;
+      padding: 75px 0;
+    }
 
-.cart-item {
-  padding: 12px 0;
-  border-bottom: 1px solid #444;
-}
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 4px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
 
-.total {
-  color: var(--gold);
-  font-size: 23px;
-  font-weight: bold;
-  margin: 20px 0;
-}
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.08;
+      margin-bottom: 22px;
+      font-weight: normal;
+    }
 
-.payment-option {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
+    .hero h1 span {
+      color: var(--gold);
+      font-style: italic;
+    }
 
-.payment-option input {
-  width: auto;
-}
+    .hero p {
+      color: #c6c6c6;
+      max-width: 510px;
+      margin-bottom: 30px;
+      font-size: 15px;
+    }
 
-.note {
-  color: #e8d69d;
-  font-size: 13px;
-  line-height: 1.6;
-}
+    .button {
+      display: inline-block;
+      padding: 13px 23px;
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: bold;
+      border: 1px solid var(--gold);
+      transition: .2s;
+    }
 
-footer {
-  text-align: center;
-  background: #111;
-  padding: 25px 10px;
-  border-top: 2px solid var(--gold);
-  color: #ccc;
-}
+    .button-primary {
+      background: var(--gold);
+      color: #080808;
+    }
 
-@media(max-width:500px) {
-  .hero h2 {
-    font-size: 26px;
-  }
+    .button-outline {
+      color: var(--gold);
+      margin-left: 8px;
+    }
 
-  nav a {
-    display: inline-block;
-    margin: 5px;
-  }
-}
-</style>
+    .button:hover {
+      background: var(--gold-light);
+      color: #080808;
+    }
+
+    /* BENEFITS */
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .benefit {
+      padding: 24px 12px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .benefit:last-child {
+      border-right: 0;
+    }
+
+    .benefit strong {
+      color: var(--gold);
+      display: block;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+
+    .benefit span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* SECTIONS */
+
+    section {
+      scroll-margin-top: 90px;
+    }
+
+    .section {
+      padding: 75px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 8px;
+    }
+
+    .section-heading h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(30px, 5vw, 42px);
+      font-weight: normal;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 10px;
+    }
+
+    /* CATEGORY TABS */
+
+    .category-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .category-tab {
+      background: transparent;
+      color: #eee;
+      border: 1px solid #444;
+      border-radius: 3px;
+      padding: 11px 23px;
+      font-size: 13px;
+    }
+
+    .category-tab.active,
+    .category-tab:hover {
+      color: #080808;
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    /* PRODUCTS */
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product-card {
+      background: var(--panel);
+      border: 1px solid #292929;
+      overflow: hidden;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+    }
+
+    .product-image {
+      aspect-ratio: 4 / 4.5;
+      background: #1b1b1b;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 5px 9px;
+      background: var(--gold);
+      color: #080808;
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .product-info {
+      padding: 18px;
+    }
+
+    .product-info h3 {
+      font-family: Georgia, serif;
+      font-size: 21px;
+      font-weight: normal;
+      margin-bottom: 6px;
+    }
+
+    .product-description {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    .product-price {
+      color: var(--gold);
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .product-actions button {
+      flex: 1;
+      min-width: 0;
+      padding: 10px 5px;
+      font-size: 11px;
+    }
+
+    .add-button {
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: #080808;
+      font-weight: bold;
+    }
+
+    .inquire-button {
+      border: 1px solid #555;
+      background: transparent;
+      color: #eee;
+    }
+
+    .inquire-button:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: #111;
+      border-top: 1px solid #292929;
+      border-bottom: 1px solid #292929;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .about-mark {
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border: 1px solid #54451f;
+      background: radial-gradient(ellipse, #272012, #090909 70%);
+    }
+
+    .about-mark .needle {
+      font-size: 52px;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+
+    .about-mark strong {
+      font-family: Georgia, serif;
+      color: var(--gold);
+      font-size: 28px;
+      letter-spacing: 3px;
+    }
+
+    .about-mark span {
+      color: #ddd;
+      letter-spacing: 5px;
+      font-size: 10px;
+      margin-top: 8px;
+    }
+
+    .about-copy h2 {
+      font-family: Georgia, serif;
+      font-weight: normal;
+      font-size: 38px;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .about-copy p {
+      color: #bbb;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    /* CONTACT */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 25px;
+      text-align: center;
+    }
+
+    .contact-card .icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .contact-card h3 {
+      color: var(--gold);
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    /* CART */
+
+    .cart-section {
+      background: #101010;
+      border-top: 1px solid var(--border);
+    }
+
+    .cart-panel {
+      max-width: 800px;
+      margin: auto;
+      border: 1px solid #363636;
+      background: #0a0a0a;
+      padding: 24px;
+    }
+
+    .cart-empty {
+      text-align: center;
+      color: var(--muted);
+      padding: 20px 0;
+      font-size: 14px;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      align-items: center;
+      gap: 15px;
+      padding: 15px 0;
+      border-bottom: 1px solid #292929;
+    }
+
+    .cart-item h4 {
+      font-size: 14px;
+    }
+
+    .cart-item small {
+      color: var(--muted);
+      display: block;
+    }
+
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .quantity-controls button,
+    .remove-button {
+      background: #222;
+      border: 1px solid #444;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 3px;
+    }
+
+    .remove-button {
+      color: #ff8a8a;
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 22px 0;
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .cart-total strong {
+      color: var(--gold);
+    }
+
+    .checkout-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      color: #ddd;
+      font-size: 12px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: #151515;
+      color: white;
+      border: 1px solid #393939;
+      border-radius: 3px;
+      padding: 12px;
+      width: 100%;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: 1px solid var(--gold);
+    }
+
+    .form-group option {
+      background: #151515;
+    }
+
+    .payment-note {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    .checkout-button {
+      width: 100%;
+      border: none;
+      margin-top: 16px;
+      padding: 15px;
+      background: #25d366;
+      color: #061b0d;
+      font-weight: bold;
+      border-radius: 3px;
+    }
+
+    .checkout-button:hover {
+      background: #5ce58b;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #292929;
+      padding: 35px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer .brand {
+      display: inline-block;
+      margin-bottom: 14px;
+    }
+
+    .footer-links {
+      margin: 14px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    /* WHATSAPP FLOATING BUTTON */
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 18px;
+      z-index: 90;
+      background: #25d366;
+      color: #061b0d;
+      padding: 13px 16px;
+      border-radius: 30px;
+      box-shadow: 0 4px 20px #0008;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 760px) {
+      .nav {
+        min-height: 68px;
+        flex-wrap: wrap;
+        padding: 12px 0;
+      }
+
+      .brand {
+        font-size: 20px;
+      }
+
+      .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+        font-size: 12px;
+      }
+
+      .cart-button {
+        padding: 9px 11px;
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: 440px;
+      }
+
+      .hero-content {
+        padding: 60px 0;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .benefit {
+        padding: 18px 6px;
+      }
+
+      .benefit strong {
+        font-size: 11px;
+      }
+
+      .benefit span {
+        font-size: 10px;
+      }
+
+      .section {
+        padding: 55px 0;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .product-info {
+        padding: 12px;
+      }
+
+      .product-info h3 {
+        font-size: 17px;
+      }
+
+      .product-description {
+        font-size: 11px;
+      }
+
+      .product-actions {
+        flex-direction: column;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .about-mark {
+        min-height: 220px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cart-panel {
+        padding: 15px;
+      }
+
+      .cart-item {
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+      }
+
+      .cart-item .quantity-controls {
+        grid-column: 1;
+      }
+
+      .cart-item .remove-button {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+      }
+
+      .checkout-form {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full {
+        grid-column: auto;
+      }
+
+      .button-outline {
+        margin: 12px 0 0;
+      }
+    }
+
+    @media (max-width: 370px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 39px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <h1>ABSAM CLOTHING</h1>
-  <p>CLOTHING &amp; TEXTILE</p>
-</header>
-
-<nav>
-  <a href="#home">Gida</a>
-  <a href="#products">Kaya</a>
-  <a href="#checkout">Oda</a>
-  <a href="#about">Game da Mu</a>
-  <a href="#contact">Tuntuɓe Mu</a>
-</nav>
-
-<div class="hero" id="home">
-  <h2>Inganci Shi Ne Alamar Tela Nagari</h2>
-  <p>Barka da zuwa Absam Clothing &amp; Textile.</p>
-  <p>Zaɓi kaya, girma, launin ɗinki da fabric ɗin da kake so.</p>
-  <a class="button" href="#products">Duba Kayayyaki</a>
-</div>
-
-<section id="products">
-  <h2 class="section-title">Kayayyakinmu</h2>
-
-  <div class="filters">
-    <button onclick="showProducts('all')">Duka</button>
-    <button onclick="showProducts('men')">Maza</button>
-    <button onclick="showProducts('women')">Mata</button>
-    <button onclick="showProducts('children')">Yara</button>
+  <div class="announcement">
+    ABSAM CLOTHING — STYLE THAT SPEAKS
   </div>
 
-  <div class="products" id="product-list"></div>
-</section>
+  <header>
+    <div class="container nav">
 
-<section id="checkout">
-  <h2 class="section-title">Kwandon Sayayya</h2>
+      <a href="#home" class="brand">
+        ABSAM CLOTHING
+        <small>PREMIUM TAILORING</small>
+      </a>
 
-  <div class="panel">
-    <div id="cart-items">Babu kaya a kwando tukuna.</div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#collection">Collection</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-    <div class="total">
-      Jimilla: <span id="total">₦0</span>
+      <a href="#cart" class="cart-button">
+        🛍️ Cart (<span id="cart-count">0</span>)
+      </a>
+
     </div>
+  </header>
 
-    <button onclick="clearCart()">Share Kwando</button>
-  </div>
+  <main>
 
-  <div class="panel">
-    <h3>Bayanan Kwastoma</h3>
+    <!-- HERO -->
 
-    <form id="order-form">
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
 
-      <label>Cikakken suna *</label>
-      <input id="customer-name" required
-             placeholder="Rubuta sunanka">
+          <div class="eyebrow">Elegance in Every Stitch</div>
 
-      <label>Lambar waya *</label>
-      <input id="customer-phone" type="tel" required
-             placeholder="08012345678">
+          <h1>
+            Dress With<br>
+            <span>Distinction.</span>
+          </h1>
 
-      <label>Adireshin isarwa</label>
-      <textarea id="customer-address"
-                placeholder="Unguwa da birni"></textarea>
+          <p>
+            Discover exceptional tailoring and timeless style.
+            From elegant traditional outfits to modern designs,
+            Absam Clothing brings your style to life.
+          </p>
 
-      <h3>Hanyar Biyan Kuɗi</h3>
+          <a href="#collection" class="button button-primary">
+            EXPLORE COLLECTION
+          </a>
 
-      <label class="payment-option">
-        <input type="radio" name="payment"
-               value="OPay Transfer" checked>
-        OPay Bank Transfer
-      </label>
+          <a href="#about" class="button button-outline">
+            OUR STORY
+          </a>
 
-      <label class="payment-option">
-        <input type="radio" name="payment"
-               value="Online Payment">
-        Online Payment
-      </label>
-
-      <p class="note">
-        Bayan ka aika oda, za a buɗe WhatsApp domin ka aika
-        bayanan odarka. Za a tabbatar da biyan kuɗi kafin
-        a amince da oda.
-      </p>
-
-      <button type="submit" style="width:100%">
-        Aika Oda ta WhatsApp
-      </button>
-
-    </form>
-  </div>
-</section>
-
-<section id="about">
-  <h2 class="section-title">Game da Mu</h2>
-
-  <div class="panel">
-    <p>
-      Absam Clothing &amp; Textile kasuwanci ne da ya mayar da
-      hankali kan ɗinki da kayan sawa masu kyau.
-      Muna ƙoƙarin samar da inganci da salo na zamani.
-    </p>
-  </div>
-</section>
-
-<section id="contact">
-  <h2 class="section-title">Tuntuɓe Mu</h2>
-
-  <div class="panel">
-    <p>📞 Waya: 09068560650</p>
-    <p>📍 Adireshi: Tukuntawa, Gidan Rediyo</p>
-
-    <a class="button"
-       href="https://wa.me/2349068560650"
-       target="_blank" rel="noopener">
-       Tuntube Mu a WhatsApp
-    </a>
-  </div>
-</section>
-
-<footer>
-  <p>© <span id="year"></span> Absam Clothing &amp; Textile</p>
-  <p>Inganci • Salo • Aminci</p>
-</footer>
-
-<script>
-
-// BAYANAN KASUWANCI
-const BUSINESS = {
-  whatsapp: "2349068560650",
-
-  // Ka saka ainihin bayanan OPay kafin wallafawa.
-  opayName: "SAKA SUNAN MAI ASUSU",
-  opayNumber: "SAKA LAMBAR ASUSU"
-};
-
-// KAYAYYAKI
-// Sauya hotuna da farashi zuwa na ainihin kayanka.
-
-const products = [
-  {
-    id: 1,
-    name: "Kaftan na Maza",
-    category: "men",
-    price: 25000,
-    image: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=700&q=80"
-  },
-  {
-    id: 2,
-    name: "T-Shirt",
-    category: "men",
-    price: 8500,
-    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80"
-  },
-  {
-    id: 3,
-    name: "Rigar Mata",
-    category: "women",
-    price: 20000,
-    image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=700&q=80"
-  },
-  {
-    id: 4,
-    name: "Kayan Yara",
-    category: "children",
-    price: 10000,
-    image: "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=700&q=80"
-  }
-];
-
-const cart = [];
-
-function money(amount) {
-  return "₦" + amount.toLocaleString("en-NG");
-}
-
-function showProducts(category = "all") {
-  const list = document.getElementById("product-list");
-
-  const filtered = products.filter(p =>
-    category === "all" || p.category === category
-  );
-
-  list.innerHTML = filtered.map(p => `
-    <div class="product">
-      <img src="${p.image}" alt="${p.name}" loading="lazy">
-
-      <h3>${p.name}</h3>
-
-      <div class="price">${money(p.price)}</div>
-
-      <label>Girman kaya</label>
-      <select id="size-${p.id}">
-        <option>S</option>
-        <option>M</option>
-        <option>L</option>
-        <option>XL</option>
-        <option>XXL</option>
-      </select>
-
-      <label>Launin ɗinki</label>
-      <select id="color-${p.id}">
-        <option>Baƙi</option>
-        <option>Fari</option>
-        <option>Shuɗi</option>
-        <option>Ja</option>
-        <option>Kore</option>
-        <option>Rawaya</option>
-        <option>Ruwan kasa</option>
-        <option>Shunayya</option>
-        <option>Wani launi dabam</option>
-      </select>
-
-      <label>Adadi</label>
-      <select id="qty-${p.id}">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-
-      <label>Zaɓi hoton fabric (idan kana da shi)</label>
-      <input type="file" id="fabric-${p.id}" accept="image/*">
-
-      <button type="button" onclick="addToCart(${p.id})">
-        Ƙara cikin Kwando
-      </button>
-    </div>
-  `).join("");
-}
-
-function addToCart(id) {
-  const product = products.find(p => p.id === id);
-
-  const size = document.getElementById("size-" + id).value;
-  const color = document.getElementById("color-" + id).value;
-  const qty = Number(document.getElementById("qty-" + id).value);
-
-  const file = document.getElementById("fabric-" + id).files[0];
-  const fabricName = file ? file.name : "";
-
-  cart.push({
-    ...product,
-    size,
-    color,
-    qty,
-    fabricName
-  });
-
-  renderCart();
-
-  alert("An ƙara kayan cikin kwando.");
-}
-
-function renderCart() {
-  const target = document.getElementById("cart-items");
-
-  if (cart.length === 0) {
-    target.innerHTML = "Babu kaya a kwando tukuna.";
-  } else {
-    target.innerHTML = cart.map((item, index) => `
-      <div class="cart-item">
-        <strong>${item.name}</strong><br>
-        Girma: ${item.size}<br>
-        Launi: ${item.color}<br>
-        Adadi: ${item.qty}<br>
-        ${item.fabricName
-          ? "Hoton fabric: " + item.fabricName + "<br>"
-          : ""}
-        Farashi: ${money(item.price * item.qty)}
-        <br>
-        <button onclick="removeItem(${index})">
-          Cire kaya
-        </button>
+        </div>
       </div>
-    `).join("");
-  }
+    </section>
 
-  const total = cart.reduce(
-    (sum, item) => sum + item.price * item.qty, 0
-  );
+    <!-- BENEFITS -->
 
-  document.getElementById("total").textContent = money(total);
-}
+    <div class="container">
+      <div class="benefits">
 
-function removeItem(index) {
-  cart.splice(index, 1);
-  renderCart();
-}
+        <div class="benefit">
+          <strong>✦ QUALITY CRAFTSMANSHIP</strong>
+          <span>Care in every detail</span>
+        </div>
 
-function clearCart() {
-  cart.length = 0;
-  renderCart();
-}
+        <div class="benefit">
+          <strong>✦ TIMELESS STYLE</strong>
+          <span>Made to stand out</span>
+        </div>
 
-document.getElementById("order-form").addEventListener("submit", function(e) {
-  e.preventDefault();
+        <div class="benefit">
+          <strong>✦ PERSONAL SERVICE</strong>
+          <span>Your style, your choice</span>
+        </div>
 
-  if (cart.length === 0) {
-    alert("Ka fara ƙara kaya cikin kwando.");
-    return;
-  }
+      </div>
+    </div>
 
-  const name = document.getElementById("customer-name").value.trim();
-  const phone = document.getElementById("customer-phone").value.trim();
-  const address = document.getElementById("customer-address").value.trim();
+    <!-- COLLECTION -->
 
-  const payment = document.querySelector(
-    'input[name="payment"]:checked'
-  ).value;
+    <section class="section" id="collection">
+      <div class="container">
 
-  const total = cart.reduce(
-    (sum, item) => sum + item.price * item.qty, 0
-  );
+        <div class="section-heading">
+          <div class="eyebrow">Our Collection</div>
+          <h2>Discover Your <span class="gold">Style</span></h2>
+          <p>Explore our clothing collection for adults and children.</p>
+        </div>
 
-  const orderLines = cart.map(item =>
-    `${item.name} | Girma: ${item.size} | Launi: ${item.color} | Adadi: ${item.qty} | ${money(item.price * item.qty)}`
-    + (item.fabricName
-      ? ` | Sunan hoton fabric: ${item.fabricName} (a haɗa hoton da hannu a WhatsApp)`
-      : "")
-  ).join("\n");
+        <div class="category-tabs">
+          <button class="category-tab active"
+                  data-category="men"
+                  onclick="showCategory('men', this)">
+            Men's Collection
+          </button>
 
-  const paymentInfo = payment === "OPay Transfer"
-    ? `\nSunan mai asusu: ${BUSINESS.opayName}\nLambar asusu: ${BUSINESS.opayNumber}`
-    : "\nOnline Payment: Ana buƙatar haɗa Paystack ko Flutterwave kafin karɓar kuɗi.";
+          <button class="category-tab"
+                  data-category="children"
+                  onclick="showCategory('children', this)">
+            Children's Collection
+          </button>
+        </div>
 
-  const message =
-`SABUWAR ODA — ABSAM CLOTHING
+        <div class="product-grid" id="product-grid"></div>
 
-Suna: ${name}
-Waya: ${phone}
-Adireshi: ${address || "Ba a bayar ba"}
+      </div>
+    </section>
 
-KAYAN ODA:
-${orderLines}
+    <!-- ABOUT -->
 
-Jimilla: ${money(total)}
-Hanyar biya: ${payment}
-${paymentInfo}
+    <section class="section about" id="about">
+      <div class="container about-grid">
 
-A tabbatar da shigowar kuɗi kafin amincewa da oda.`;
+        <div class="about-mark">
+          <div class="needle">✦</div>
+          <strong>ABSAM</strong>
+          <span>CLOTHING</span>
+        </div>
 
-  const whatsappURL =
-    "https://wa.me/" + BUSINESS.whatsapp +
-    "?text=" + encodeURIComponent(message);
+        <div class="about-copy">
+          <div class="eyebrow">About Our Brand</div>
 
-  window.open(whatsappURL, "_blank", "noopener,noreferrer");
+          <h2>Tradition Meets <span class="gold">Modern Elegance.</span></h2>
 
-  if (cart.some(item => item.fabricName)) {
-    alert(
-      "WhatsApp zai buɗe da bayanan oda. Ka haɗa hoton fabric da hannu a WhatsApp kafin ka aika."
-    );
-  }
-});
+          <p>
+            At Absam Clothing, we believe that what you wear should
+            express your personality and confidence.
+          </p>
 
-document.getElementById("year").textContent = new Date().getFullYear();
+          <p>
+            We offer traditional and contemporary clothing with
+            attention to detail, helping you look your best for
+            everyday wear and special occasions.
+          </p>
 
-showProducts();
-renderCart();
+          <a href="#collection" class="button button-primary">
+            VIEW COLLECTION
+          </a>
+        </div>
 
-</script>
+      </div>
+    </section>
 
-</body>
-</html>
+    <!-- CART AND CHECKOUT -->
+
+    <section class="section cart-section" id="cart">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">Your Selection</div>
+          <h2>Shopping <span class="gold">Cart</span></h2>
+          <p>Review your selected items before placing an order.</p>
+        </div>
+
+        <div class="cart-panel">
+
+          <div id="cart-items">
+            <div class="cart-empty">
+              Your cart is empty. Explore our collection to get started.
+            </div>
+          </div>
+
+          <div class="cart-total">
+            <span>Total</span>
+            <strong id="cart-total">₦0</strong>
+          </div>
+
+          <form id="checkout-form" onsubmit="placeOrder(event)">
+
+            <div class="checkout-form">
+
+              <div class="form-group">
+                <label for="customer-name">Full name *</label>
+                <input id="customer-name"
+                       name="name"
+                       type="text"
+                       autocomplete="name"
+                       required
+                       placeholder="Enter your full name">
+              </div>
+
+              <div class="form-group">
+                <label for="customer-phone">Phone number *</label>
+                <input id="customer-phone"
+                       name="phone"
+                       type="tel"
+                       autocomplete="tel"
+                       required
+                       placeholder="Enter your phone number">
+              </div>
+
+              <div class="form-group">
+                <label for="customer-category">Collection *</label>
+                <select id="customer-c
