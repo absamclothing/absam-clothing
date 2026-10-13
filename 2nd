@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ha">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Absam Clothing & Textile</title>
+
+<style>
+:root {
+  --black: #0b0b0b;
+  --gold: #d4af37;
+  --white: #ffffff;
+  --panel: #181818;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: #111;
+  padding: 20px 12px;
+  text-align: center;
+  border-bottom: 2px solid var(--gold);
+}
+
+header h1 {
+  color: var(--gold);
+  margin: 0;
+  font-size: 27px;
+}
+
+header p {
+  margin: 5px 0 0;
+  letter-spacing: 3px;
+}
+
+nav {
+  background: #181818;
+  padding: 13px 5px;
+  text-align: center;
+}
+
+nav a {
+  color: var(--gold);
+  text-decoration: none;
+  margin: 0 8px;
+  font-size: 14px;
+}
+
+.hero {
+  padding: 45px 18px;
+  text-align: center;
+  background: linear-gradient(135deg, #17130a, #080808);
+}
+
+.hero h2 {
+  color: var(--gold);
+  font-size: 32px;
+}
+
+.hero p {
+  color: #ddd;
+}
+
+button, .button {
+  background: var(--gold);
+  color: #111;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+section {
+  padding: 30px 15px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2.section-title {
+  color: var(--gold);
+  text-align: center;
+}
+
+.filters {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.filters button {
+  margin: 4px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.product {
+  background: var(--panel);
+  border: 1px solid #55451e;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.product img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 7px;
+  background: #292929;
+}
+
+.product h3 {
+  color: var(--gold);
+}
+
+.price {
+  color: var(--gold);
+  font-size: 21px;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+select, input, textarea {
+  width: 100%;
+  padding: 11px;
+  margin-top: 5px;
+  background: #101010;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 5px;
+}
+
+.product button {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid #55451e;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+.panel h3 {
+  color: var(--gold);
+}
+
+.cart-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #444;
+}
+
+.total {
+  color: var(--gold);
+  font-size: 23px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.payment-option {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.payment-option input {
+  width: auto;
+}
+
+.note {
+  color: #e8d69d;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+footer {
+  text-align: center;
+  background: #111;
+  padding: 25px 10px;
+  border-top: 2px solid var(--gold);
+  color: #ccc;
+}
+
+@media(max-width:500px) {
+  .hero h2 {
+    font-size: 26px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>ABSAM CLOTHING</h1>
+  <p>CLOTHING &amp; TEXTILE</p>
+</header>
+
+<nav>
+  <a href="#home">Gida</a>
+  <a href="#products">Kaya</a>
+  <a href="#checkout">Oda</a>
+  <a href="#about">Game da Mu</a>
+  <a href="#contact">Tuntuɓe Mu</a>
+</nav>
+
+<div class="hero" id="home">
+  <h2>Inganci Shi Ne Alamar Tela Nagari</h2>
+  <p>Barka da zuwa Absam Clothing &amp; Textile.</p>
+  <p>Zaɓi kaya, girma, launin ɗinki da fabric ɗin da kake so.</p>
+  <a class="button" href="#products">Duba Kayayyaki</a>
+</div>
+
+<section id="products">
+  <h2 class="section-title">Kayayyakinmu</h2>
+
+  <div class="filters">
+    <button onclick="showProducts('all')">Duka</button>
+    <button onclick="showProducts('men')">Maza</button>
+    <button onclick="showProducts('women')">Mata</button>
+    <button onclick="showProducts('children')">Yara</button>
+  </div>
+
+  <div class="products" id="product-list"></div>
+</section>
+
+<section id="checkout">
+  <h2 class="section-title">Kwandon Sayayya</h2>
+
+  <div class="panel">
+    <div id="cart-items">Babu kaya a kwando tukuna.</div>
+
+    <div class="total">
+      Jimilla: <span id="total">₦0</span>
+    </div>
+
+    <button onclick="clearCart()">Share Kwando</button>
+  </div>
+
+  <div class="panel">
+    <h3>Bayanan Kwastoma</h3>
+
+    <form id="order-form">
+
+      <label>Cikakken suna *</label>
+      <input id="customer-name" required
+             placeholder="Rubuta sunanka">
+
+      <label>Lambar waya *</label>
+      <input id="customer-phone" type="tel" required
+             placeholder="08012345678">
+
+      <label>Adireshin isarwa</label>
+      <textarea id="customer-address"
+                placeholder="Unguwa da birni"></textarea>
+
+      <h3>Hanyar Biyan Kuɗi</h3>
+
+      <label class="payment-option">
+        <input type="radio" name="payment"
+               value="OPay Transfer" checked>
+        OPay Bank Transfer
+      </label>
+
+      <label class="payment-option">
+        <input type="radio" name="payment"
+               value="Online Payment">
+        Online Payment
+      </label>
+
+      <p class="note">
+        Bayan ka aika oda, za a buɗe WhatsApp domin ka aika
+        bayanan odarka. Za a tabbatar da biyan kuɗi kafin
+        a amince da oda.
+      </p>
+
+      <button type="submit" style="width:100%">
+        Aika Oda ta WhatsApp
+      </button>
+
+    </form>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">Game da Mu</h2>
+
+  <div class="panel">
+    <p>
+      Absam Clothing &amp; Textile kasuwanci ne da ya mayar da
+      hankali kan ɗinki da kayan sawa masu kyau.
+      Muna ƙoƙarin samar da inganci da salo na zamani.
+    </p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Tuntuɓe Mu</h2>
+
+  <div class="panel">
+    <p>📞 Waya: 09068560650</p>
+    <p>📍 Adireshi: Tukuntawa, Gidan Rediyo</p>
+
+    <a class="button"
+       href="https://wa.me/2349068560650"
+       target="_blank" rel="noopener">
+       Tuntube Mu a WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© <span id="year"></span> Absam Clothing &amp; Textile</p>
+  <p>Inganci • Salo • Aminci</p>
+</footer>
+
+<script>
+
+// BAYANAN KASUWANCI
+const BUSINESS = {
+  whatsapp: "2349068560650",
+
+  // Ka saka ainihin bayanan OPay kafin wallafawa.
+  opayName: "SAKA SUNAN MAI ASUSU",
+  opayNumber: "SAKA LAMBAR ASUSU"
+};
+
+// KAYAYYAKI
+// Sauya hotuna da farashi zuwa na ainihin kayanka.
+
+const products = [
+  {
+    id: 1,
+    name: "Kaftan na Maza",
+    category: "men",
+    price: 25000,
+    image: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: 2,
+    name: "T-Shirt",
+    category: "men",
+    price: 8500,
+    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: 3,
+    name: "Rigar Mata",
+    category: "women",
+    price: 20000,
+    image: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=700&q=80"
+  },
+  {
+    id: 4,
+    name: "Kayan Yara",
+    category: "children",
+    price: 10000,
+    image: "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=700&q=80"
+  }
+];
+
+const cart = [];
+
+function money(amount) {
+  return "₦" + amount.toLocaleString("en-NG");
+}
+
+function showProducts(category = "all") {
+  const list = document.getElementById("product-list");
+
+  const filtered = products.filter(p =>
+    category === "all" || p.category === category
+  );
+
+  list.innerHTML = filtered.map(p => `
+    <div class="product">
+      <img src="${p.image}" alt="${p.name}" loading="lazy">
+
+      <h3>${p.name}</h3>
+
+      <div class="price">${money(p.price)}</div>
+
+      <label>Girman kaya</label>
+      <select id="size-${p.id}">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+        <option>XXL</option>
+      </select>
+
+      <label>Launin ɗinki</label>
+      <select id="color-${p.id}">
+        <option>Baƙi</option>
+        <option>Fari</option>
+        <option>Shuɗi</option>
+        <option>Ja</option>
+        <option>Kore</option>
+        <option>Rawaya</option>
+        <option>Ruwan kasa</option>
+        <option>Shunayya</option>
+        <option>Wani launi dabam</option>
+      </select>
+
+      <label>Adadi</label>
+      <select id="qty-${p.id}">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <label>Zaɓi hoton fabric (idan kana da shi)</label>
+      <input type="file" id="fabric-${p.id}" accept="image/*">
+
+      <button type="button" onclick="addToCart(${p.id})">
+        Ƙara cikin Kwando
+      </button>
+    </div>
+  `).join("");
+}
+
+function addToCart(id) {
+  const product = products.find(p => p.id === id);
+
+  const size = document.getElementById("size-" + id).value;
+  const color = document.getElementById("color-" + id).value;
+  const qty = Number(document.getElementById("qty-" + id).value);
+
+  const file = document.getElementById("fabric-" + id).files[0];
+  const fabricName = file ? file.name : "";
+
+  cart.push({
+    ...product,
+    size,
+    color,
+    qty,
+    fabricName
+  });
+
+  renderCart();
+
+  alert("An ƙara kayan cikin kwando.");
+}
+
+function renderCart() {
+  const target = document.getElementById("cart-items");
+
+  if (cart.length === 0) {
+    target.innerHTML = "Babu kaya a kwando tukuna.";
+  } else {
+    target.innerHTML = cart.map((item, index) => `
+      <div class="cart-item">
+        <strong>${item.name}</strong><br>
+        Girma: ${item.size}<br>
+        Launi: ${item.color}<br>
+        Adadi: ${item.qty}<br>
+        ${item.fabricName
+          ? "Hoton fabric: " + item.fabricName + "<br>"
+          : ""}
+        Farashi: ${money(item.price * item.qty)}
+        <br>
+        <button onclick="removeItem(${index})">
+          Cire kaya
+        </button>
+      </div>
+    `).join("");
+  }
+
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.qty, 0
+  );
+
+  document.getElementById("total").textContent = money(total);
+}
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  renderCart();
+}
+
+function clearCart() {
+  cart.length = 0;
+  renderCart();
+}
+
+document.getElementById("order-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  if (cart.length === 0) {
+    alert("Ka fara ƙara kaya cikin kwando.");
+    return;
+  }
+
+  const name = document.getElementById("customer-name").value.trim();
+  const phone = document.getElementById("customer-phone").value.trim();
+  const address = document.getElementById("customer-address").value.trim();
+
+  const payment = document.querySelector(
+    'input[name="payment"]:checked'
+  ).value;
+
+  const total = cart.reduce(
+    (sum, item) => sum + item.price * item.qty, 0
+  );
+
+  const orderLines = cart.map(item =>
+    `${item.name} | Girma: ${item.size} | Launi: ${item.color} | Adadi: ${item.qty} | ${money(item.price * item.qty)}`
+    + (item.fabricName
+      ? ` | Sunan hoton fabric: ${item.fabricName} (a haɗa hoton da hannu a WhatsApp)`
+      : "")
+  ).join("\n");
+
+  const paymentInfo = payment === "OPay Transfer"
+    ? `\nSunan mai asusu: ${BUSINESS.opayName}\nLambar asusu: ${BUSINESS.opayNumber}`
+    : "\nOnline Payment: Ana buƙatar haɗa Paystack ko Flutterwave kafin karɓar kuɗi.";
+
+  const message =
+`SABUWAR ODA — ABSAM CLOTHING
+
+Suna: ${name}
+Waya: ${phone}
+Adireshi: ${address || "Ba a bayar ba"}
+
+KAYAN ODA:
+${orderLines}
+
+Jimilla: ${money(total)}
+Hanyar biya: ${payment}
+${paymentInfo}
+
+A tabbatar da shigowar kuɗi kafin amincewa da oda.`;
+
+  const whatsappURL =
+    "https://wa.me/" + BUSINESS.whatsapp +
+    "?text=" + encodeURIComponent(message);
+
+  window.open(whatsappURL, "_blank", "noopener,noreferrer");
+
+  if (cart.some(item => item.fabricName)) {
+    alert(
+      "WhatsApp zai buɗe da bayanan oda. Ka haɗa hoton fabric da hannu a WhatsApp kafin ka aika."
+    );
+  }
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+showProducts();
+renderCart();
+
+</script>
+
+</body>
+</html>
