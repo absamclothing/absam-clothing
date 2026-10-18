@@ -1,885 +1,330 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="ha">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Absam Clothing | Online Store</title>
-
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  --gold: #e5c568;
-  --black: #080808;
-  --card: #191919;
-  --muted: #bbb;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Absam Foundation — Bayani da neman tallafin rance ga masu kasuwanci.">
+  <title>Absam Foundation | Neman Rance</title>
+  <style>
+    :root {
+      --blue: #0756a5;
+      --dark-blue: #06366a;
+      --light-blue: #edf5ff;
+      --white: #ffffff;
+      --text: #243247;
+      --green: #137547;
+    }* { box-sizing: border-box; }
 
 body {
-  background: var(--black);
-  color: white;
+  margin: 0;
   font-family: Arial, sans-serif;
-  padding-bottom: 75px;
-}
-
-header {
-  text-align: center;
-  padding: 22px 12px;
-  background: #111;
-  border-bottom: 1px solid var(--gold);
-}
-
-.logo {
-  color: var(--gold);
-  font-size: 25px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-
-header p {
-  color: var(--muted);
-  margin-top: 7px;
-  font-size: 13px;
-}
-
-.hero {
-  text-align: center;
-  padding: 48px 20px;
-  background: linear-gradient(#222, #080808);
-}
-
-.hero h1 {
-  color: var(--gold);
-  font-size: 34px;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  color: #ddd;
-  line-height: 1.8;
-  margin-bottom: 24px;
-}
-
-.button {
-  display: inline-block;
-  background: var(--gold);
-  color: #080808;
-  border: none;
-  padding: 13px 19px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-section {
-  padding: 30px 15px;
-  scroll-margin-top: 15px;
-}
-
-.section-title {
-  text-align: center;
-  color: var(--gold);
-  font-size: 25px;
-  margin-bottom: 22px;
-}
-
-.category-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 22px;
-  flex-wrap: wrap;
-}
-
-.category-btn {
-  background: #222;
-  color: white;
-  border: 1px solid var(--gold);
-  padding: 12px 18px;
-  border-radius: 7px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.category-btn.active {
-  background: var(--gold);
-  color: #080808;
-}
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 13px;
-}
-
-.product {
-  background: var(--card);
-  border: 1px solid #66552c;
-  border-radius: 10px;
-  padding: 10px;
-  min-width: 0;
-}
-
-.product img {
-  width: 100%;
-  height: 165px;
-  object-fit: cover;
-  border-radius: 6px;
-  background: #292929;
-}
-
-.product h3 {
-  color: var(--gold);
-  font-size: 15px;
-  margin: 12px 0 8px;
-}
-
-.product p {
-  color: #ccc;
-  font-size: 13px;
+  color: var(--text);
+  background: #f5f8fc;
   line-height: 1.6;
 }
 
-.price {
-  color: #ffd700;
-  font-weight: bold;
-  margin: 12px 0;
+header {
+  background: var(--blue);
+  color: var(--white);
+  padding: 18px 5%;
 }
 
-.order-button {
-  display: block;
-  width: 100%;
-  padding: 11px 5px;
-  background: var(--gold);
-  color: #080808;
-  border: none;
-  border-radius: 5px;
+.nav {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.brand { font-size: 23px; font-weight: bold; }
+
+select, button, input, textarea {
+  font: inherit;
+}
+
+header select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 0;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--blue), var(--dark-blue));
+  color: white;
+  padding: 65px 5%;
+  text-align: center;
+}
+
+.hero-content { max-width: 800px; margin: auto; }
+
+.hero h1 {
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.2;
+  margin: 0 0 18px;
+}
+
+.hero p { font-size: 18px; }
+
+.button {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 22px;
+  border-radius: 7px;
+  background: white;
+  color: var(--blue);
   font-weight: bold;
+  text-decoration: none;
+  border: 0;
   cursor: pointer;
-  font-size: 13px;
 }
 
-.info-box,
-.form-box,
-.cart-box {
-  background: var(--card);
-  border: 1px solid #66552c;
-  border-radius: 10px;
-  padding: 18px;
-  line-height: 1.8;
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 35px 18px 55px;
 }
 
-label {
-  display: block;
-  color: var(--gold);
-  margin: 13px 0 5px;
-  font-weight: bold;
-  font-size: 14px;
+.notice {
+  padding: 15px;
+  background: #fff7df;
+  border-left: 5px solid #e3a008;
+  border-radius: 6px;
+  margin-bottom: 28px;
 }
 
-input,
-select,
-textarea {
+.section-title { text-align: center; color: var(--dark-blue); }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin: 25px 0 40px;
+}
+
+.card, .form-card {
+  background: white;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 3px 15px #0b326510;
+}
+
+.card h3 { color: var(--blue); margin-top: 0; }
+
+.form-card { max-width: 760px; margin: 25px auto; }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+
+.field.full { grid-column: 1 / -1; }
+
+label { font-weight: bold; font-size: 14px; }
+
+input, textarea, .field select {
   width: 100%;
   padding: 12px;
-  border: 1px solid #66552c;
+  border: 1px solid #cbd5e1;
   border-radius: 6px;
-  background: #101010;
-  color: white;
-  font-size: 16px;
+  background: white;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 1px solid var(--gold);
-}
-
-option {
-  background: #191919;
-  color: white;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.cart-item {
-  padding: 12px 0;
-  border-bottom: 1px solid #444;
-}
-
-.cart-item strong {
-  color: var(--gold);
-}
-
-.cart-item button {
-  margin-top: 7px;
-  background: #7d2424;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 7px 10px;
-  cursor: pointer;
-}
-
-.cart-total {
-  color: var(--gold);
-  font-size: 20px;
-  font-weight: bold;
-  margin: 18px 0;
-}
-
-.note {
-  color: #ccc;
-  font-size: 13px;
-  line-height: 1.7;
-  margin-top: 10px;
-}
-
-.payment-option {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  margin: 14px 0;
-  color: white;
-}
-
-.payment-option input {
-  width: auto;
-  margin-top: 6px;
-  accent-color: var(--gold);
-}
-
-.payment-option label {
-  margin: 0;
-  color: white;
-  font-weight: normal;
-}
-
-.whatsapp {
-  display: block;
+.submit {
   width: 100%;
-  text-align: center;
-  padding: 15px;
-  background: #168b48;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+  padding: 14px;
+  margin-top: 20px;
+  border: 0;
   border-radius: 7px;
-  border: none;
+  background: var(--blue);
+  color: white;
+  font-weight: bold;
   cursor: pointer;
-  font-size: 15px;
-  margin-top: 16px;
 }
 
-.info-box a {
-  color: var(--gold);
+.submit:hover { background: var(--dark-blue); }
+
+.message {
+  display: none;
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 7px;
+  background: var(--light-blue);
+  overflow-wrap: anywhere;
 }
+
+.message.visible { display: block; }
+
+.small { font-size: 13px; color: #526174; }
 
 footer {
+  padding: 25px 5%;
   text-align: center;
-  padding: 25px 10px;
-  color: #aaa;
-  font-size: 13px;
-  line-height: 1.9;
+  color: white;
+  background: var(--dark-blue);
 }
 
-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  background: #171717;
-  border-top: 1px solid #66552c;
-  padding: 9px 2px;
-  z-index: 100;
+@media (max-width: 600px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .field.full { grid-column: auto; }
+  .hero { padding: 45px 20px; }
 }
 
-nav a {
-  color: #ddd;
-  text-decoration: none;
-  text-align: center;
-  font-size: 10px;
-  flex: 1;
-}
-
-nav a span {
-  display: block;
-  font-size: 20px;
-  margin-bottom: 4px;
-}
-
-.hidden {
-  display: none !important;
-}
-
-@media (max-width: 360px) {
-  .products {
-    grid-template-columns: 1fr;
-  }
-
-  .product img {
-    height: 230px;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
+  </style>
 </head>
-
 <body>
+  <header>
+    <div class="nav">
+      <div class="brand">Absam Foundation</div>
+      <label>
+        <span id="language-label">Harshe / Language</span>
+        <select id="language" aria-label="Choose language">
+          <option value="ha">Hausa</option>
+          <option value="en">English</option>
+        </select>
+      </label>
+    </div>
+  </header>  <section class="hero">
+    <div class="hero-content">
+      <h1 data-ha="Tallafa wa Kasuwanci, Gina Makoma"
+          data-en="Supporting Businesses, Building Futures">
+        Tallafa wa Kasuwanci, Gina Makoma
+      </h1>
+      <p data-ha="Absam Foundation na shirin samar da tsarin neman rance ga masu kasuwanci."
+         data-en="Absam Foundation is developing a loan application service for business owners.">
+        Absam Foundation na shirin samar da tsarin neman rance ga masu kasuwanci.
+      </p>
+      <a class="button" href="#apply"
+         data-ha="Duba Fom ɗin Neman Rance"
+         data-en="View Loan Application Form">Duba Fom ɗin Neman Rance</a>
+    </div>
+  </section>  <main>
+    <div class="notice">
+      <strong data-ha="Muhimmin bayani:" data-en="Important notice:">Muhimmin bayani:</strong>
+      <span data-ha="Wannan shafi na Absam Foundation ne mai zaman kansa, ba shafin gwamnati ba ne. Fom ɗin da ke ƙasa na gwaji ne; ba a fara karɓar buƙatun rance na gaske ba tukuna."
+            data-en="This is an independently operated Absam Foundation website, not a government website. The form below is a demonstration; real loan applications are not being accepted yet.">
+        Wannan shafi na Absam Foundation ne mai zaman kansa, ba shafin gwamnati ba ne. Fom ɗin da ke ƙasa na gwaji ne; ba a fara karɓar buƙatun rance na gaske ba tukuna.
+      </span>
+    </div><h2 class="section-title" data-ha="Tsarin Neman Rance" data-en="Loan Application Service">Tsarin Neman Rance</h2>
 
-<header id="home">
-  <div class="logo">ABSAM CLOTHING</div>
-  <p>Premium Traditional Clothing</p>
-  <p>Kano, Nigeria</p>
-</header>
-
-<div class="hero">
-  <h1>Dress Like Royalty</h1>
-
-  <p>
-    Discover elegant traditional clothing
-    for adults and children, carefully tailored
-    with quality and style.
-  </p>
-
-  <a href="#shop" class="button">EXPLORE OUR SHOP</a>
+<div class="cards">
+  <article class="card">
+    <h3 data-ha="Adadin Rance" data-en="Loan Amount">Adadin Rance</h3>
+    <p data-ha="Daga ₦50,000 zuwa ₦1,000,000."
+       data-en="From ₦50,000 to ₦1,000,000.">Daga ₦50,000 zuwa ₦1,000,000.</p>
+  </article>
+  <article class="card">
+    <h3 data-ha="Lokacin Biya" data-en="Repayment Period">Lokacin Biya</h3>
+    <p data-ha="Shirin watanni 12; sharuɗɗa za su buƙaci tabbatarwa."
+       data-en="Proposed 12-month period; terms still require confirmation.">
+      Shirin watanni 12; sharuɗɗa za su buƙaci tabbatarwa.
+    </p>
+  </article>
+  <article class="card">
+    <h3 data-ha="Dubawa da Amincewa" data-en="Review and Approval">Dubawa da Amincewa</h3>
+    <p data-ha="Za a duba kowace buƙata kafin a yanke shawara."
+       data-en="Each application will be reviewed before a decision is made.">
+      Za a duba kowace buƙata kafin a yanke shawara.
+    </p>
+  </article>
 </div>
 
-<section id="shop">
-  <h2 class="section-title">Our Collections</h2>
+<section id="apply" class="form-card">
+  <h2 data-ha="Fom ɗin Neman Rance" data-en="Loan Application Form">Fom ɗin Neman Rance</h2>
+  <p class="small"
+     data-ha="Wannan fom na nuna yadda shafin zai kasance ne kawai. Ba ya aika ko adana bayanai tukuna."
+     data-en="This is a visual demonstration only. It does not submit or store information yet.">
+    Wannan fom na nuna yadda shafin zai kasance ne kawai. Ba ya aika ko adana bayanai tukuna.
+  </p>
 
-  <div class="category-buttons">
-    <button class="category-btn active"
-    onclick="showCategory('adult', this)">
-      ADULTS
-    </button>
-
-    <button class="category-btn"
-    onclick="showCategory('children', this)">
-      CHILDREN
-    </button>
-  </div>
-
-  <div class="products" id="product-list"></div>
-</section>
-
-<section id="cart">
-  <h2 class="section-title">Shopping Cart</h2>
-
-  <div class="cart-box">
-    <div id="cart-items">
-      Your shopping cart is empty.
-    </div>
-
-    <div class="cart-total" id="cart-total">
-      Total: ₦0
-    </div>
-
-    <p class="note">
-      Some products require price confirmation.
-      We will confirm their prices before payment.
-    </p>
-  </div>
-</section>
-
-<section id="checkout">
-  <h2 class="section-title">Customer & Order Details</h2>
-
-  <div class="form-box">
-
-    <form id="order-form">
-
-      <label for="customer-name">Full Name</label>
-      <input
-        type="text"
-        id="customer-name"
-        placeholder="Enter your full name"
-        required
-      >
-
-      <label for="customer-phone">Phone Number</label>
-      <input
-        type="tel"
-        id="customer-phone"
-        placeholder="Enter your phone number"
-        required
-      >
-
-      <label for="customer-category">Clothing Category</label>
-      <select id="customer-category" required>
-        <option value="">Choose category</option>
-        <option value="Adults Wear">Adults Wear</option>
-        <option value="Children's Wear">Children's Wear</option>
-      </select>
-
-      <label for="customer-size">Clothing Size</label>
-      <select id="customer-size" required>
-        <option value="">Choose size</option>
-      </select>
-
-      <label for="customer-quantity">Quantity</label>
-      <input
-        type="number"
-        id="customer-quantity"
-        min="1"
-        max="100"
-        value="1"
-        required
-      >
-
-      <label for="customer-notes">Measurements / Special Requests</label>
-      <textarea
-        id="customer-notes"
-        rows="3"
-        placeholder="Enter measurements or other requests"
-      ></textarea>
-
-      <h3 style="color:var(--gold); margin-top:25px;">
-        Payment Method
-      </h3>
-
-      <div class="payment-option">
-        <input
-          type="radio"
-          name="payment"
-          id="opay"
-          value="OPay Bank Transfer"
-          required
-        >
-        <label for="opay">
-          <strong>OPay Bank Transfer</strong><br>
-          Account details will be confirmed by Absam Clothing.
-        </label>
+  <form id="loan-form">
+    <div class="form-grid">
+      <div class="field">
+        <label for="full_name" data-ha="Cikakken suna" data-en="Full name">Cikakken suna</label>
+        <input id="full_name" name="full_name" autocomplete="name" required>
       </div>
 
-      <div class="payment-option">
-        <input
-          type="radio"
-          name="payment"
-          id="online-payment"
-          value="Online Payment"
-        >
-        <label for="online-payment">
-          <strong>Online Payment</strong><br>
-          Online payment is not yet available. Please contact us
-          to arrange payment.
-        </label>
+      <div class="field">
+        <label for="phone" data-ha="Lambar waya" data-en="Phone number">Lambar waya</label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" required>
       </div>
 
-      <p class="note">
-        Selecting a payment method does not mean payment has
-        been completed. Please wait for confirmation from
-        Absam Clothing.
-      </p>
+      <div class="field">
+        <label for="state" data-ha="Jiha" data-en="State">Jiha</label>
+        <input id="state" name="state" required>
+      </div>
 
-      <button type="submit" class="whatsapp">
-        SEND ORDER TO WHATSAPP
-      </button>
+      <div class="field">
+        <label for="local_government" data-ha="Ƙaramar hukuma" data-en="Local government area">Ƙaramar hukuma</label>
+        <input id="local_government" name="local_government" required>
+      </div>
 
-    </form>
-  </div>
-</section>
+      <div class="field">
+        <label for="business_name" data-ha="Sunan kasuwanci" data-en="Business name">Sunan kasuwanci</label>
+        <input id="business_name" name="business_name" required>
+      </div>
 
-<section id="about">
-  <h2 class="section-title">About Absam Clothing</h2>
+      <div class="field">
+        <label for="business_type" data-ha="Nau'in kasuwanci" data-en="Business type">Nau'in kasuwanci</label>
+        <input id="business_type" name="business_type" required>
+      </div>
 
-  <div class="info-box">
-    Welcome to Absam Clothing.
-
-    We specialise in traditional clothing,
-    including Babban Riga, Kaftan and Senator outfits.
-
-    We aim to provide beautiful designs,
-    quality stitching and a comfortable fit.
-
-    <br><br>
-
-    <strong>Location:</strong>
-    Tukuntawa, Gidan Rediyo, Kano, Nigeria.
-  </div>
-</section>
-
-<section id="contact">
-  <h2 class="section-title">Contact Us</h2>
-
-  <div class="info-box">
-    <p><strong>Business:</strong> Absam Clothing</p>
-
-    <p><strong>Phone:</strong> +234 906 856 0650</p>
-
-    <p>
-      <strong>Email:</strong>
-      <a href="mailto:absamclothing@gmail.com">
-        absamclothing@gmail.com
-      </a>
-    </p>
-
-    <p>
-      <strong>Address:</strong>
-      Tukuntawa, Gidan Rediyo, Kano, Nigeria.
-    </p>
-
-    <a
-      class="whatsapp"
-      href="https://wa.me/2349068560650"
-      target="_blank"
-      rel="noopener"
-    >
-      CHAT ON WHATSAPP
-    </a>
-  </div>
-</section>
-
-<footer>
-  <p><strong>ABSAM CLOTHING</strong></p>
-  <p>Quality • Elegance • Tradition</p>
-  <p>© 2026 Absam Clothing</p>
-</footer>
-
-<nav>
-  <a href="#home"><span>⌂</span>Home</a>
-  <a href="#shop"><span>✧</span>Shop</a>
-  <a href="#cart"><span>🛒</span>Cart</a>
-  <a href="#checkout"><span>▣</span>Order</a>
-  <a href="#contact"><span>☏</span>Contact</a>
-</nav>
-
-<script>
-const WHATSAPP_NUMBER = "2349068560650";
-
-const products = [
-  {
-    id: 1,
-    name: "Premium Babban Riga",
-    category: "adult",
-    price: 18000,
-    image: "https://i.postimg.cc/QdknzRrg/file-00000000c0c48206b71aa5f4dae3a2c9.png",
-    description: "Elegant traditional wear tailored to your measurements."
-  },
-  {
-    id: 2,
-    name: "Premium Kaftan",
-    category: "adult",
-    price: null,
-    image: "https://i.postimg.cc/QdknzRrg/file-00000000c0c48206b71aa5f4dae3a2c9.png",
-    description: "Stylish clothing for occasions and everyday elegance."
-  },
-  {
-    id: 3,
-    name: "Senator Outfit",
-    category: "adult",
-    price: null,
-    image: "https://i.postimg.cc/QdknzRrg/file-00000000c0c48206b71aa5f4dae3a2c9.png",
-    description: "Smart traditional fashion with professional tailoring."
-  },
-  {
-    id: 4,
-    name: "Children's Babban Riga",
-    category: "children",
-    price: null,
-    image: "https://i.postimg.cc/QdknzRrg/file-00000000c0c48206b71aa5f4dae3a2c9.png",
-    description: "Traditional clothing for children, made to fit."
-  },
-  {
-    id: 5,
-    name: "Children's Kaftan",
-    category: "children",
-    price: null,
-    image: "https://i.postimg.cc/QdknzRrg/file-00000000c0c48206b71aa5f4dae3a2c9.png",
-    description: "Smart and comfortable clothing for children."
-  }
-];
-
-let cart = [];
-let currentCategory = "adult";
-
-function formatPrice(price) {
-  if (price === null || price === undefined) {
-    return "Price to be confirmed";
-  }
-
-  return "₦" + price.toLocaleString("en-NG");
-}
-
-function showCategory(category, button) {
-  currentCategory = category;
-
-  document.querySelectorAll(".category-btn").forEach(btn => {
-    btn.classList.remove("active");
-  });
-
-  button.classList.add("active");
-
-  renderProducts();
-
-  document.getElementById("customer-category").value =
-    category === "adult" ? "Adults Wear" : "Children's Wear";
-
-  updateSizeOptions();
-}
-
-function renderProducts() {
-  const list = document.getElementById("product-list");
-
-  const filtered = products.filter(product =>
-    product.category === currentCategory
-  );
-
-  list.innerHTML = filtered.map(product => `
-    <div class="product">
-      <img
-        src="${product.image}"
-        alt="${product.name}"
-        loading="lazy"
-      >
-
-      <h3>${product.name}</h3>
-
-      <p>${product.description}</p>
-
-      <div class="price">${formatPrice(product.price)}</div>
-
-      <button
-        class="order-button"
-        onclick="addToCart(${product.id})"
-      >
-        ADD TO CART
-      </button>
+      <div class="field full">
+        <label for="loan_amount" data-ha="Adadin rancen da kake nema (₦)" data-en="Requested loan amount (₦)">Adadin rancen da kake nema (₦)</label>
+        <input id="loan_amount" name="loan_amount" type="number" min="50000" max="1000000" step="5000" required>
+      </div>
     </div>
-  `).join("");
-}
 
-function addToCart(id) {
-  const product = products.find(item => item.id === id);
+    <button class="submit" type="submit"
+            data-ha="Gwada Fom ɗin"
+            data-en="Test Form">Gwada Fom ɗin</button>
+    <div id="form-message" class="message" role="status"></div>
+  </form>
+</section>
 
-  if (!product) return;
+  </main>  <footer>
+    <p>© <span id="year"></span> Absam Foundation</p>
+    <p data-ha="Shiri mai zaman kansa. Amincewa da kowane rance yana ƙarƙashin sharuddan da za a bayyana a hukumance."
+       data-en="Independent initiative. Any loan approval will be subject to formally published terms.">
+      Shiri mai zaman kansa. Amincewa da kowane rance yana ƙarƙashin sharuddan da za a bayyana a hukumance.
+    </p>
+  </footer>  <script>
+    const languagePicker = document.getElementById("language");
 
-  const existing = cart.find(item => item.id === id);
+    languagePicker.addEventListener("change", function () {
+      const language = this.value;
+      document.documentElement.lang = language;
 
-  if (existing) {
-    existing.quantity += 1;
-  } else {
-    cart.push({
-      ...product,
-      quantity: 1
-    });
-  }
-
-  renderCart();
-
-  document.getElementById("cart").scrollIntoView({
-    behavior: "smooth"
-  });
-}
-
-function removeFromCart(id) {
-  cart = cart.filter(item => item.id !== id);
-  renderCart();
-}
-
-function changeQuantity(id, amount) {
-  const item = cart.find(product => product.id === id);
-
-  if (!item) return;
-
-  item.quantity += amount;
-
-  if (item.quantity <= 0) {
-    removeFromCart(id);
-    return;
-  }
-
-  renderCart();
-}
-
-function renderCart() {
-  const container = document.getElementById("cart-items");
-  const totalElement = document.getElementById("cart-total");
-
-  if (cart.length === 0) {
-    container.innerHTML = "Your shopping cart is empty.";
-    totalElement.textContent = "Total: ₦0";
-    return;
-  }
-
-  container.innerHTML = cart.map(item => `
-    <div class="cart-item">
-      <strong>${item.name}</strong><br>
-      Price: ${formatPrice(item.price)}<br>
-      Quantity: ${item.quantity}<br>
-
-      <button onclick="changeQuantity(${item.id}, -1)">−</button>
-      <button onclick="changeQuantity(${item.id}, 1)">+</button>
-      <button onclick="removeFromCart(${item.id})">Remove</button>
-    </div>
-  `).join("");
-
-  const hasUnknownPrice = cart.some(item => item.price === null);
-
-  const total = cart.reduce((sum, item) => {
-    return sum + (item.price === null ? 0 : item.price * item.quantity);
-  }, 0);
-
-  if (hasUnknownPrice) {
-    totalElement.textContent =
-      "Total: Price confirmation required";
-  } else {
-    totalElement.textContent =
-      "Total: " + formatPrice(total);
-  }
-}
-
-function updateSizeOptions() {
-  const category =
-    document.getElementById("customer-category").value;
-
-  const sizeSelect = document.getElementById("customer-size");
-
-  if (category === "Children's Wear") {
-    sizeSelect.innerHTML = `
-      <option value="">Choose child's age</option>
-      <option value="2 years">2 years</option>
-      <option value="4 years">4 years</option>
-      <option value="6 years">6 years</option>
-      <option value="8 years">8 years</option>
-      <option value="10 years">10 years</option>
-      <option value="12 years">12 years</option>
-      <option value="14 years">14 years</option>
-    `;
-  } else if (category === "Adults Wear") {
-    sizeSelect.innerHTML = `
-      <option value="">Choose size</option>
-      <option value="S">S</option>
-      <option value="M">M</option>
-      <option value="L">L</option>
-      <option value="XL">XL</option>
-      <option value="XXL">XXL</option>
-      <option value="Custom Measurements">Custom Measurements</option>
-    `;
-  } else {
-    sizeSelect.innerHTML = `
-      <option value="">Choose size</option>
-    `;
-  }
-}
-
-document.getElementById("customer-category")
-  .addEventListener("change", updateSizeOptions);
-
-document.getElementById("order-form")
-  .addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    if (cart.length === 0) {
-      alert("Please add at least one product to your cart.");
-      return;
-    }
-
-    const name =
-      document.getElementById("customer-name").value.trim();
-
-    const phone =
-      document.getElementById("customer-phone").value.trim();
-
-    const category =
-      document.getElementById("customer-category").value;
-
-    const size =
-      document.getElementById("customer-size").value;
-
-    const quantity =
-      document.getElementById("customer-quantity").value;
-
-    const notes =
-      document.getElementById("customer-notes").value.trim();
-
-    const payment =
-      document.querySelector('input[name="payment"]:checked');
-
-    if (!name || !phone || !category || !size || !payment) {
-      alert("Please complete all required fields.");
-      return;
-    }
-
-    const hasUnknownPrice =
-      cart.some(item => item.price === null);
-
-    const total = cart.reduce((sum, item) => {
-      return sum + (item.price === null ? 0 : item.price * item.quantity);
-    }, 0);
-
-    let message =
-      "ABSAM CLOTHING - NEW ORDER\n\n" +
-      "Customer Name: " + name + "\n" +
-      "Phone Number: " + phone + "\n" +
-      "Category: " + category + "\n" +
-      "Size / Age: " + size + "\n" +
-      "Requested Quantity: " + quantity + "\n\n" +
-      "ORDER ITEMS:\n";
-
-    cart.forEach(item => {
-      message +=
-        "- " + item.name +
-        " x " + item.quantity +
-        " | " + formatPrice(item.price) + "\n";
+      document.querySelectorAll("[data-ha][data-en]").forEach(function (element) {
+        element.textContent = element.dataset[language];
+      });
     });
 
-    message +=
-      "\nTotal: " +
-      (hasUnknownPrice
-        ? "Price confirmation required"
-        : formatPrice(total)) +
-      "\n";
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-    message +=
-      "Payment Method: " + payment.value + "\n";
+    document.getElementById("loan-form").addEventListener("submit", function (event) {
+      event.preventDefault();
 
-    message +=
-      "Payment Status: Not yet verified\n";
+      const amount = Number(document.getElementById("loan_amount").value);
+      const message = document.getElementById("form-message");
+      const language = languagePicker.value;
 
-    if (notes) {
-      message += "Measurements / Requests: " + notes + "\n";
-    }
+      message.classList.add("visible");
 
-    message +=
-      "\nPlease confirm the order and payment details.";
+      if (amount < 50000 || amount > 1000000) {
+        message.textContent = language === "ha"
+          ? "Adadin rance dole ne ya kasance tsakanin ₦50,000 da ₦1,000,000."
+          : "The loan amount must be between ₦50,000 and ₦1,000,000.";
+        return;
+      }
 
-    const url =
-      "https://wa.me/" +
-      WHATSAPP_NUMBER +
-      "?text=" +
-      encodeURIComponent(message);
-
-    window.open(url, "_blank");
-  });
-
-renderProducts();
-renderCart();
-updateSizeOptions();
-</script>
-
-</body>
+      message.textContent = language === "ha"
+        ? "Wannan gwaji ne kawai. Ba a aika ko adana bayananka ba."
+        : "This is a demonstration only. Your information has not been submitted or stored.";
+    });
+  </script></body>
 </html>
