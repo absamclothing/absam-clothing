@@ -1,37 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ha">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Absam Clothing | Premium Traditional Wear in Kano</title>
+  <title>Absam Clothing & Textile</title>
 
-  <meta name="description" content="Discover premium Babban Riga, Kaftan and Senator outfits tailored by Absam Clothing in Tukuntawa, Kano, Nigeria. Contact us on WhatsApp to place your order.">
-
-  <meta name="theme-color" content="#080808">
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JHFM4J7S8C"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'G-JHFM4J7S8C');
-  </script>
-  <!-- End Google Analytics -->
+  <meta name="description"
+        content="Barka da zuwa Absam Clothing & Textile. Zaɓi tufafi, duba kayayyaki, sannan ka aika odarka ta WhatsApp.">
 
   <style>
     :root {
-      --background: #080808;
-      --surface: #151515;
-      --gold: #e5c568;
-      --gold-border: #8f783c;
+      --black: #111111;
+      --gold: #d4af37;
       --white: #ffffff;
-      --muted: #c5c5c5;
+      --light: #f5f5f5;
+      --gray: #666666;
+      --green: #25d366;
     }
 
     * {
@@ -45,279 +30,267 @@
     }
 
     body {
-      background: var(--background);
-      color: var(--white);
       font-family: Arial, sans-serif;
+      background: var(--light);
+      color: var(--black);
       line-height: 1.6;
-      padding-bottom: 85px;
-    }
-
-    a {
-      -webkit-tap-highlight-color: transparent;
     }
 
     header {
+      background: var(--black);
+      color: var(--white);
       text-align: center;
-      padding: 24px 15px;
-      background: #101010;
-      border-bottom: 1px solid var(--gold-border);
+      padding: 24px 12px;
+      border-bottom: 4px solid var(--gold);
     }
 
-    .logo {
+    header h1 {
       color: var(--gold);
-      font-size: clamp(23px, 5vw, 32px);
-      font-weight: 800;
-      letter-spacing: 2px;
+      font-size: clamp(22px, 5vw, 34px);
     }
 
-    .tagline {
-      color: var(--muted);
-      margin-top: 5px;
+    header p {
       font-size: 14px;
     }
 
-    .location {
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      background: #222;
+      padding: 13px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    nav a:hover {
       color: var(--gold);
-      font-size: 12px;
-      margin-top: 5px;
     }
 
     .hero {
       text-align: center;
-      padding: 60px 20px;
-      background:
-        radial-gradient(
-          ellipse at top,
-          #292313 0%,
-          #111111 45%,
-          #080808 100%
-        );
+      padding: 65px 20px;
+      background: var(--black);
+      color: white;
     }
 
-    .eyebrow {
+    .hero h2 {
       color: var(--gold);
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 3px;
+      font-size: clamp(25px, 5vw, 38px);
       margin-bottom: 12px;
     }
 
-    .hero h1 {
-      color: var(--gold);
-      font-size: clamp(30px, 7vw, 48px);
-      line-height: 1.2;
-      margin-bottom: 18px;
-    }
-
     .hero p {
-      max-width: 600px;
-      margin: 0 auto 25px;
-      color: #dddddd;
-      font-size: 15px;
+      max-width: 650px;
+      margin: 0 auto 22px;
     }
 
     .button {
       display: inline-block;
       background: var(--gold);
-      color: #080808;
-      padding: 13px 21px;
-      border-radius: 6px;
-      text-decoration: none;
+      color: var(--black);
+      padding: 12px 18px;
+      border: none;
+      border-radius: 5px;
       font-weight: bold;
-      border: 1px solid var(--gold);
+      text-decoration: none;
       cursor: pointer;
-      transition: 0.2s;
+      font-size: 15px;
     }
 
     .button:hover {
-      background: #f4d986;
+      background: #ebcd65;
     }
 
-    section {
-      padding: 35px 16px;
-      scroll-margin-top: 20px;
+    .section {
+      max-width: 1200px;
+      padding: 38px 16px;
+      margin: auto;
     }
 
     .section-title {
       text-align: center;
-      color: var(--gold);
-      font-size: 26px;
-      margin-bottom: 8px;
-    }
-
-    .section-description {
-      text-align: center;
-      color: var(--muted);
-      font-size: 14px;
-      margin: 0 auto 24px;
-      max-width: 550px;
+      font-size: 27px;
+      margin-bottom: 25px;
     }
 
     .products {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 15px;
-      max-width: 950px;
-      margin: auto;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 230px), 1fr)
+      );
+      gap: 20px;
     }
 
     .product {
-      min-width: 0;
-      background: var(--surface);
-      border: 1px solid #44391f;
-      border-radius: 10px;
-      padding: 10px;
+      background: white;
+      border-radius: 9px;
       overflow: hidden;
+      box-shadow: 0 3px 12px #00000012;
+      padding-bottom: 18px;
     }
 
     .product img {
       display: block;
       width: 100%;
-      height: 175px;
+      height: 250px;
       object-fit: cover;
-      border-radius: 6px;
-      background: #222222;
+      background: #ddd;
     }
 
     .product h3 {
-      color: var(--gold);
-      font-size: 16px;
-      margin: 12px 0 6px;
+      padding: 12px 13px 3px;
     }
 
-    .product p {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.6;
+    .product-description {
+      padding: 0 13px;
+      color: var(--gray);
+      font-size: 14px;
     }
 
     .price {
-      color: #ffdc72;
+      padding: 5px 13px;
       font-weight: bold;
-      margin: 12px 0;
-      font-size: 15px;
+      color: #947313;
+      font-size: 19px;
     }
 
-    .order-button {
+    .product label {
       display: block;
-      width: 100%;
-      padding: 11px 5px;
-      background: var(--gold);
-      color: #080808;
-      text-decoration: none;
-      text-align: center;
-      border-radius: 5px;
+      padding: 7px 13px 3px;
+      font-size: 13px;
       font-weight: bold;
-      font-size: 12px;
     }
 
-    .info-box {
-      max-width: 750px;
-      margin: auto;
-      background: var(--surface);
-      border: 1px solid #44391f;
+    .product select,
+    .product input {
+      display: block;
+      width: calc(100% - 26px);
+      margin: 0 13px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: white;
+    }
+
+    .product .button {
+      display: block;
+      width: calc(100% - 26px);
+      margin: 15px 13px 0;
+    }
+
+    .box {
+      background: white;
       padding: 22px;
-      border-radius: 10px;
-      color: #dddddd;
-    }
-
-    .info-box p {
-      margin-bottom: 10px;
-    }
-
-    .info-box strong {
-      color: var(--gold);
-    }
-
-    .info-box a:not(.button) {
-      color: var(--gold);
-      overflow-wrap: anywhere;
-    }
-
-    .steps {
-      padding-left: 22px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px #0000000c;
       margin-bottom: 20px;
     }
 
-    .steps li {
-      margin-bottom: 9px;
+    .cart-item {
+      padding: 14px 0;
+      border-bottom: 1px solid #ddd;
     }
 
-    .contact-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+    .cart-item button {
+      margin-top: 8px;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+
+    .cart-total {
+      font-size: 21px;
+      font-weight: bold;
       margin-top: 18px;
     }
 
-    footer {
-      text-align: center;
-      padding: 28px 12px;
-      border-top: 1px solid #44391f;
-      color: #aaaaaa;
-      font-size: 12px;
+    .empty {
+      color: var(--gray);
     }
 
-    footer .footer-brand {
-      color: var(--gold);
-      font-weight: bold;
-      font-size: 16px;
-      letter-spacing: 2px;
-      margin-bottom: 5px;
+    .form-group {
+      margin-bottom: 16px;
     }
 
-    nav {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      background: #141414;
-      border-top: 1px solid var(--gold-border);
-      padding: 9px 2px calc(9px + env(safe-area-inset-bottom));
-      z-index: 100;
-    }
-
-    nav a {
-      flex: 1;
-      color: #dddddd;
-      text-decoration: none;
-      text-align: center;
-      font-size: 10px;
-    }
-
-    nav a span {
+    .form-group label {
       display: block;
-      font-size: 20px;
-      margin-bottom: 2px;
+      font-weight: bold;
+      margin-bottom: 6px;
     }
 
-    @media (min-width: 700px) {
-      .products {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+    .form-control {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font: inherit;
+      background: white;
+    }
+
+    textarea.form-control {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .help-text {
+      color: var(--gray);
+      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    .full-button {
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    .about p {
+      margin-bottom: 8px;
+    }
+
+    footer {
+      background: var(--black);
+      color: white;
+      text-align: center;
+      padding: 28px 15px;
+      border-top: 4px solid var(--gold);
+    }
+
+    footer strong {
+      color: var(--gold);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 15px;
+      bottom: 15px;
+      background: var(--green);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 13px 17px;
+      border-radius: 30px;
+      z-index: 100;
+      box-shadow: 0 3px 10px #0003;
+    }
+
+    @media (max-width: 480px) {
+      .section {
+        padding: 28px 12px;
+      }
+
+      nav {
+        gap: 12px;
       }
 
       .product img {
-        height: 240px;
-      }
-
-      section {
-        padding: 45px 24px;
-      }
-    }
-
-    @media (max-width: 360px) {
-      .products {
-        grid-template-columns: 1fr;
-      }
-
-      .product img {
-        height: 230px;
-      }
-
-      nav a {
-        font-size: 9px;
+        height: 220px;
       }
     }
   </style>
@@ -325,243 +298,444 @@
 
 <body>
 
-  <header id="home">
-    <div class="logo">ABSAM CLOTHING</div>
-    <p class="tagline">Premium Traditional Men's Clothing</p>
-    <p class="location">Tukuntawa, Kano, Nigeria</p>
+  <!-- HEADER -->
+  <header>
+    <h1>ABSAM CLOTHING &amp; TEXTILE</h1>
+    <p>Inganci shi ne alamar tela nagari.</p>
+    <p>Tukuntawa, Gidan Rediyo</p>
   </header>
 
-  <main>
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#home">Gida</a>
+    <a href="#products">Kayayyaki</a>
+    <a href="#cart">Cart</a>
+    <a href="#order">Yi Oda</a>
+    <a href="#about">Game da Mu</a>
+  </nav>
 
-    <div class="hero">
-      <p class="eyebrow">QUALITY · ELEGANCE · TRADITION</p>
+  <!-- HOME -->
+  <section class="hero" id="home">
+    <h2>Barka da zuwa Absam Clothing</h2>
 
-      <h1>Dress Like Royalty</h1>
+    <p>
+      Ka zaɓi tufafin da kake so, ka duba farashinsu,
+      sannan ka aika odarka kai tsaye ta WhatsApp.
+      Muna maraba da kai!
+    </p>
 
-      <p>
-        Discover premium Babban Riga, Kaftan and Senator outfits.
-        Every design is crafted with care to give you elegance,
-        comfort and a quality fit.
-      </p>
+    <a href="#products" class="button">Duba Kayayyaki</a>
+  </section>
 
-      <a href="#designs" class="button">
-        EXPLORE OUR DESIGNS
-      </a>
+  <!-- PRODUCTS -->
+  <section class="section" id="products">
+    <h2 class="section-title">Kayayyakinmu</h2>
+    <div class="products" id="productsContainer"></div>
+  </section>
+
+  <!-- CART -->
+  <section class="section" id="cart">
+    <h2 class="section-title">Cart ɗinka</h2>
+
+    <div class="box">
+      <div id="cartItems">
+        <p class="empty">Ba ka saka kaya a cart ba tukuna.</p>
+      </div>
+
+      <div class="cart-total" id="cartTotal">
+        Jimilla: ₦0
+      </div>
+
+      <button class="button" onclick="clearCart()" style="margin-top:15px">
+        Share Cart
+      </button>
     </div>
+  </section>
 
-    <section id="designs">
-      <h2 class="section-title">Our Collections</h2>
+  <!-- ORDER FORM -->
+  <section class="section" id="order">
+    <h2 class="section-title">Yi Oda</h2>
 
-      <p class="section-description">
-        Discover traditional styles made with care.
-        Contact us to discuss your preferred fabric, design and measurements.
-      </p>
+    <div class="box">
+      <form id="orderForm">
 
-      <div class="products">
-
-        <article class="product">
-          <img
-            src="https://i.postimg.cc/QdknzRrg/file-00000000c0c48206b71aa5f4dae3a2c9.png"
-            alt="Premium Babban Riga"
-            loading="lazy"
+        <div class="form-group">
+          <label for="customerName">Cikakken Sunanka</label>
+          <input
+            class="form-control"
+            id="customerName"
+            type="text"
+            placeholder="Shigar da sunanka"
+            required
           >
-
-          <h3>Premium Babban Riga</h3>
-
-          <p>
-            Elegant traditional wear tailored to your measurements.
-          </p>
-
-          <div class="price">₦18,000</div>
-
-          <a
-            class="order-button"
-            href="https://wa.me/2349068560650?text=Hello%20Absam%20Clothing%2C%20I%20want%20to%20order%20Premium%20Babban%20Riga%20for%20%E2%82%A618%2C000."
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ORDER NOW
-          </a>
-        </article>
-
-        <article class="product">
-          <img
-            src="https://i.postimg.cc/QdknzRrg/file-00000000c0c48206b71aa5f4dae3a2c9.png"
-            alt="Premium Kaftan"
-            loading="lazy"
-          >
-
-          <h3>Premium Kaftan</h3>
-
-          <p>
-            A stylish outfit for special occasions and everyday elegance.
-          </p>
-
-          <div class="price">Ask for Price</div>
-
-          <a
-            class="order-button"
-            href="https://wa.me/2349068560650?text=Hello%20Absam%20Clothing%2C%20I%20want%20to%20ask%20about%20your%20Premium%20Kaftan."
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            INQUIRE NOW
-          </a>
-        </article>
-
-        <article class="product">
-          <img
-            src="https://i.postimg.cc/QdknzRrg/file-00000000c0c48206b71aa5f4dae3a2c9.png"
-            alt="Senator Outfit"
-            loading="lazy"
-          >
-
-          <h3>Senator Outfit</h3>
-
-          <p>
-            Smart traditional fashion with professional tailoring.
-          </p>
-
-          <div class="price">Ask for Price</div>
-
-          <a
-            class="order-button"
-            href="https://wa.me/2349068560650?text=Hello%20Absam%20Clothing%2C%20I%20want%20to%20ask%20about%20a%20Senator%20outfit."
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            INQUIRE NOW
-          </a>
-        </article>
-
-      </div>
-    </section>
-
-    <section id="profile">
-      <h2 class="section-title">About Us</h2>
-
-      <p class="section-description">
-        Traditional craftsmanship with a modern touch.
-      </p>
-
-      <div class="info-box">
-        <p>
-          Welcome to <strong>Absam Clothing</strong>, your destination
-          for premium traditional men's clothing in Kano, Nigeria.
-        </p>
-
-        <p>
-          We specialise in Babban Riga, Kaftan and Senator outfits,
-          with attention to quality stitching, beautiful designs
-          and a comfortable fit.
-        </p>
-
-        <p>
-          <strong>Location:</strong>
-          Tukuntawa, Gidan Rediyo, Kano, Nigeria.
-        </p>
-      </div>
-    </section>
-
-    <section id="orders">
-      <h2 class="section-title">How to Order</h2>
-
-      <p class="section-description">
-        Placing an order is simple.
-      </p>
-
-      <div class="info-box">
-        <ol class="steps">
-          <li>Browse our clothing collections.</li>
-          <li>Select your preferred design.</li>
-          <li>Click the order button to contact us on WhatsApp.</li>
-          <li>Discuss your measurements, fabric and final price.</li>
-          <li>Confirm your order directly with our team.</li>
-        </ol>
-
-        <a
-          class="button"
-          href="https://wa.me/2349068560650?text=Hello%20Absam%20Clothing%2C%20I%20want%20to%20place%20an%20order."
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          PLACE AN ORDER
-        </a>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2 class="section-title">Contact Us</h2>
-
-      <div class="info-box">
-        <p><strong>Business:</strong> Absam Clothing</p>
-
-        <p>
-          <strong>Phone:</strong>
-          +234 906 856 0650
-        </p>
-
-        <p>
-          <strong>Email:</strong>
-          <a href="mailto:absamclothing@gmail.com">
-            absamclothing@gmail.com
-          </a>
-        </p>
-
-        <p>
-          <strong>Address:</strong>
-          Tukuntawa, Gidan Rediyo, Kano, Nigeria.
-        </p>
-
-        <div class="contact-buttons">
-          <a
-            class="button"
-            href="https://wa.me/2349068560650"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            CHAT ON WHATSAPP
-          </a>
-
-          <a
-            class="button"
-            href="mailto:absamclothing@gmail.com"
-          >
-            SEND EMAIL
-          </a>
         </div>
-      </div>
-    </section>
 
-  </main>
+        <div class="form-group">
+          <label for="customerPhone">Lambar Wayarka</label>
+          <input
+            class="form-control"
+            id="customerPhone"
+            type="tel"
+            placeholder="Misali: 08012345678"
+            required
+          >
+        </div>
 
+        <div class="form-group">
+          <label for="customerAddress">Adireshin da Za a Kai Kaya</label>
+          <textarea
+            class="form-control"
+            id="customerAddress"
+            placeholder="Shigar da adireshinka"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="fabricImage">Hoton Yadi (Idan Kana da Shi)</label>
+          <input
+            class="form-control"
+            id="fabricImage"
+            type="file"
+            accept="image/*"
+          >
+          <p class="help-text">
+            Idan ka zaɓi hoton yadi, za ka buƙaci ka tura shi da kanka
+            a WhatsApp bayan an buɗe tattaunawar.
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label for="customerNotes">Ƙarin Bayani</label>
+          <textarea
+            class="form-control"
+            id="customerNotes"
+            placeholder="Rubuta irin ɗinkin da kake so ko wani ƙarin bayani"
+          ></textarea>
+        </div>
+
+        <button class="button full-button" type="submit">
+          Aika Oda ta WhatsApp
+        </button>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <h2 class="section-title">Game da Mu</h2>
+
+    <div class="box about">
+      <p>
+        <strong>Absam Clothing &amp; Textile</strong>
+        yana mai da hankali kan tufafi masu kyau, ɗinki mai inganci
+        da salo na zamani.
+      </p>
+
+      <p><strong>Adireshi:</strong> Tukuntawa, Gidan Rediyo</p>
+
+      <p><strong>WhatsApp:</strong> 09068560650</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p class="footer-brand">ABSAM CLOTHING</p>
-    <p>Quality · Elegance · Tradition</p>
-    <p>© 2026 Absam Clothing. All rights reserved.</p>
+    <p><strong>ABSAM CLOTHING &amp; TEXTILE</strong></p>
+    <p>Tukuntawa, Gidan Rediyo</p>
+    <p>WhatsApp: 09068560650</p>
+    <p>© <span id="year"></span> Absam Clothing</p>
   </footer>
 
-  <nav aria-label="Main navigation">
-    <a href="#home">
-      <span>⌂</span>Home
-    </a>
+  <!-- WHATSAPP SHORTCUT -->
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/2349068560650"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    WhatsApp
+  </a>
 
-    <a href="#designs">
-      <span>✧</span>Designs
-    </a>
+  <script>
+    // BAYANAN KASUWANCI
+    const BUSINESS = {
+      whatsapp: "2349068560650"
+    };
 
-    <a href="#profile">
-      <span>♙</span>About
-    </a>
+    // KAYAYYAKI
+    // Sauya sunaye, farashi da hotuna zuwa na kasuwancinka.
+    const products = [
+      {
+        id: 1,
+        name: "Premium Kaftan",
+        description: "Kaftan mai kyau da salo na zamani.",
+        price: 25000,
+        image: "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 2,
+        name: "Traditional Wear",
+        description: "Tufafin gargajiya mai kyau.",
+        price: 18000,
+        image: "https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 3,
+        name: "Classic Shirt",
+        description: "Riga mai kyau don yau da kullum.",
+        price: 12000,
+        image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 4,
+        name: "Luxury Fabric",
+        description: "Yadi mai kyau don ɗinki.",
+        price: 15000,
+        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=700&q=80"
+      }
+    ];
 
-    <a href="#orders">
-      <span>▣</span>Orders
-    </a>
+    let cart = [];
 
-    <a href="#contact">
-      <span>☏</span>Contact
-    </a>
-  </nav>
+    // TSARA FARASHI
+    function formatPrice(amount) {
+      return "₦" + amount.toLocaleString("en-NG");
+    }
+
+    // NUNA KAYAYYAKI
+    function displayProducts() {
+      const container = document.getElementById("productsContainer");
+
+      container.innerHTML = products.map(product => `
+        <article class="product">
+          <img
+            src="${product.image}"
+            alt="${product.name}"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='https://placehold.co/600x400?text=Absam+Clothing';"
+          >
+
+          <h3>${product.name}</h3>
+
+          <p class="product-description">${product.description}</p>
+
+          <p class="price">${formatPrice(product.price)}</p>
+
+          <label for="size-${product.id}">Zaɓi Size</label>
+          <select id="size-${product.id}">
+            <option value="">Zaɓi size</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+            <option value="A auna min">A auna min</option>
+          </select>
+
+          <label for="color-${product.id}">Zaɓi Launi</label>
+          <select id="color-${product.id}">
+            <option value="">Zaɓi launi</option>
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+            <option value="Gold">Gold</option>
+            <option value="Blue">Blue</option>
+            <option value="Brown">Brown</option>
+            <option value="Other">Wani launi</option>
+          </select>
+
+          <label for="qty-${product.id}">Yawan Kaya</label>
+          <input
+            id="qty-${product.id}"
+            type="number"
+            min="1"
+            max="100"
+            value="1"
+          >
+
+          <button
+            class="button"
+            type="button"
+            onclick="addToCart(${product.id})"
+          >
+            Ƙara a Cart
+          </button>
+        </article>
+      `).join("");
+    }
+
+    // ƘARA KAYA A CART
+    function addToCart(productId) {
+      const product = products.find(item => item.id === productId);
+
+      const size = document.getElementById(`size-${productId}`).value;
+      const color = document.getElementById(`color-${productId}`).value;
+
+      const quantity = Number(
+        document.getElementById(`qty-${productId}`).value
+      );
+
+      if (!size) {
+        alert("Da fatan zaɓi size.");
+        return;
+      }
+
+      if (!color) {
+        alert("Da fatan zaɓi launi.");
+        return;
+      }
+
+      if (!Number.isInteger(quantity) || quantity < 1 || quantity > 100) {
+        alert("Shigar da adadin kaya da ya dace.");
+        return;
+      }
+
+      cart.push({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        size: size,
+        color: color,
+        quantity: quantity
+      });
+
+      displayCart();
+
+      alert("An ƙara " + product.name + " a cart.");
+    }
+
+    // JIMILLAR FARASHI
+    function getTotal() {
+      return cart.reduce(
+        (total, item) => total + item.price * item.quantity,
+        0
+      );
+    }
+
+    // NUNA CART
+    function displayCart() {
+      const cartItems = document.getElementById("cartItems");
+      const cartTotal = document.getElementById("cartTotal");
+
+      if (cart.length === 0) {
+        cartItems.innerHTML =
+          '<p class="empty">Ba ka saka kaya a cart ba tukuna.</p>';
+
+        cartTotal.textContent = "Jimilla: ₦0";
+        return;
+      }
+
+      cartItems.innerHTML = cart.map((item, index) => `
+        <div class="cart-item">
+          <strong>${item.name}</strong>
+          <p>Size: ${item.size}</p>
+          <p>Launi: ${item.color}</p>
+          <p>Yawan kaya: ${item.quantity}</p>
+          <p>Farashi: ${formatPrice(item.price * item.quantity)}</p>
+
+          <button type="button" onclick="removeFromCart(${index})">
+            Cire Kaya
+          </button>
+        </div>
+      `).join("");
+
+      cartTotal.textContent = "Jimilla: " + formatPrice(getTotal());
+    }
+
+    // CIRE KAYA
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      displayCart();
+    }
+
+    // SHARE CART
+    function clearCart() {
+      if (cart.length === 0) {
+        alert("Cart ɗin babu kaya.");
+        return;
+      }
+
+      if (confirm("Kana son cire duk kayan da ke cart?")) {
+        cart = [];
+        displayCart();
+      }
+    }
+
+    // AIKA ODA TA WHATSAPP
+    document.getElementById("orderForm").addEventListener(
+      "submit",
+      function(event) {
+        event.preventDefault();
+
+        if (cart.length === 0) {
+          alert("Da farko ka zaɓi kaya ka saka a cart.");
+          document.getElementById("products").scrollIntoView({
+            behavior: "smooth"
+          });
+          return;
+        }
+
+        const name = document.getElementById("customerName").value.trim();
+        const phone = document.getElementById("customerPhone").value.trim();
+        const address = document.getElementById("customerAddress").value.trim();
+        const notes = document.getElementById("customerNotes").value.trim();
+        const fabricInput = document.getElementById("fabricImage");
+
+        if (!name || !phone || !address) {
+          alert("Cika sunanka, lambar waya da adireshinka.");
+          return;
+        }
+
+        const itemsText = cart.map((item, index) => {
+          return (
+            `${index + 1}. ${item.name}\n` +
+            `Size: ${item.size}\n` +
+            `Launi: ${item.color}\n` +
+            `Yawan kaya: ${item.quantity}\n` +
+            `Farashi: ${formatPrice(item.price * item.quantity)}`
+          );
+        }).join("\n\n");
+
+        let message =
+          "ASSALAMU ALAIKUM, ABSAM CLOTHING & TEXTILE\n\n" +
+          "Ina son yin oda.\n\n" +
+          "Sunan kwastoma: " + name + "\n" +
+          "Lambar waya: " + phone + "\n" +
+          "Adireshi: " + address + "\n\n" +
+          "KAYAN DA NA ZAƁA:\n" +
+          itemsText + "\n\n" +
+          "Jimillar farashi: " + formatPrice(getTotal()) + "\n\n";
+
+        if (notes) {
+          message += "Ƙarin bayani: " + notes + "\n\n";
+        }
+
+        if (fabricInput.files.length > 0) {
+          message +=
+            "Ina da hoton yadi; zan tura hoton a WhatsApp da kaina.\n\n";
+        }
+
+        message +=
+          "Don Allah a tabbatar da samuwar kaya da cikakken bayani kan odar. Na gode.";
+
+        const whatsappURL =
+          "https://wa.me/" +
+          BUSINESS.whatsapp +
+          "?text=" +
+          encodeURIComponent(message);
+
+        window.location.href = whatsappURL;
+      }
+    );
+
+    // SHEKARAR YANZU
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // FARA SHAFIN
+    displayProducts();
+    displayCart();
+  </script>
 
 </body>
 </html>
